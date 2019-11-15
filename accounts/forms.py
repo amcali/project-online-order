@@ -20,9 +20,8 @@ class UserRegistrationForm(UserCreationForm):
     password2 = forms.CharField(label="Confirm Password:",
                                 widget=forms.PasswordInput)
 
-    User = get_user_model()
-    
-    def clean_username(self):    
+    def clean_username(self):
+        User = get_user_model()
         user_provided_username = self.cleaned_data.get('username')
         
         #validation to check if username being registered already exists
@@ -32,6 +31,7 @@ class UserRegistrationForm(UserCreationForm):
         return user_provided_username
     
     def clean_email(self):
+        User = get_user_model()        
         user_provided_email = self.cleaned_data.get('email')
         
         #validation to check if email address being registered already exists

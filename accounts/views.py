@@ -38,7 +38,8 @@ def login(request):
         return render(request, 'accounts/login.template.html', {
             'form': form
         })
-        
+
+""" This is to ensure that user login is required in order for profile page to be accessible """        
 @login_required
 def profile(request):
     User = get_user_model()
@@ -46,13 +47,28 @@ def profile(request):
     return render(request, "accounts/profile.template.html", {
         'user': user
     })
-    
+
+""" This is the user registration function """    
 def register(request):
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            pass
+            form.save()
+            #check if the username and password matches
+            user = auth.authenticate(username=request.POST['username'],
+                                    password=request.POST['password1'])
+            #if the user is successfully created, log the user into their account
+            if user:
+                #log user in
+                auth.login(user=user, request=request)
+                messages.success(request, "Registration successful")
+            else:
+                messages.error(request, "Registration failed")
+            
+            return redirect(reverse('index'))
+            
         else:
+            register_form = UserRegistrationForm()
             return render(request, "accounts/register.template.html", {
                 'form': form
             })
@@ -61,5 +77,6 @@ def register(request):
         return render(request, "accounts/register.template.html", {
             'form': register_form
         })
-    
+
+
     
