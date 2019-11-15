@@ -130,4 +130,5 @@ AUTHENTICATION_BACKENDS = (
     
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'accounts/login'
+

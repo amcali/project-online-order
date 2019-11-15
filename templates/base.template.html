@@ -22,7 +22,7 @@
               <a class="nav-link" href="{% url "user_register" %}">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login">Login</a>
+              <a class="nav-link" href="{% url "login" %}">Login</a>
             </li>
             {% endif %}
             {% if user.is_authenticated %}
@@ -30,7 +30,7 @@
               <a class="nav-link" href="{% url "user_profile" %}">Profile</a>
             </li>        
             <li class="nav-item">
-              <a class="nav-link" href="logout">Logout</a>
+              <a class="nav-link" href="{% url "logout" %}">Logout</a>
             </li>
             {% endif %}
           </ul>
