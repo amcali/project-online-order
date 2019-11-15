@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import auth, messages
 from .forms import UserLoginForm
+from django.contrib.auth import get_user_model
 
 #Import login_required annotations
 from django.contrib.auth.decorators import login_required
@@ -40,4 +41,8 @@ def login(request):
         
 @login_required
 def profile(request):
-    return HttpResponse("Profile")
+    User = get_user_model()
+    user = User.objects.get(email=request.user.email)
+    return render(request, "accounts/profile.template.html", {
+        'user': user
+    })
