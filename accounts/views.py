@@ -16,7 +16,21 @@ def logout(request):
     
 """ This is the user login function """
 def login(request):
-    form = UserLoginForm()
-    return render(request, 'accounts/login.template.html', {
-        'form': form
-    })
+    if request.method == "POST":
+        #This will populate the login request with the user input into the login form
+        login_form = UserLoginForm(request.POST)
+        
+        #If the login form input is valid
+        if login_form.is_valid():
+            #check if the user name and password match
+            user = auth.authenticate(username=request.POST['username'],
+                                    password=request.POST['password'])
+            #If user exists, log them in
+            if user:
+                auth.login(user=user, request=request)
+                return redirect(reverse('index'))
+    else:
+        form = UserLoginForm()
+        return render(request, 'accounts/login.template.html', {
+            'form': form
+        })
