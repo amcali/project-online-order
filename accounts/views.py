@@ -48,9 +48,18 @@ def profile(request):
     })
     
 def register(request):
-    register_form = UserRegistrationForm()
-    return render(request, "accounts/register.template.html", {
-        'form': register_form
-    })
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            pass
+        else:
+            return render(request, "accounts/register.template.html", {
+                'form': form
+            })
+    else:   
+        register_form = UserRegistrationForm()
+        return render(request, "accounts/register.template.html", {
+            'form': register_form
+        })
     
     
