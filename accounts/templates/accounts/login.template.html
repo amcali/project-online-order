@@ -21,7 +21,7 @@
           <a class="nav-link" href="#">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login">Login</a>
+          <a class="nav-link" href="#">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Profile</a>
@@ -44,6 +44,8 @@
     {% if request.user.username %}
         Logged in as: {{request.user.username}}
     {% endif %}
+    
+    <h1>Login</h1>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
