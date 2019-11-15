@@ -46,3 +46,6 @@ def profile(request):
     return render(request, "accounts/profile.template.html", {
         'user': user
     })
+    
+def register(request):
+    return render(request, "accounts/register.template.html")
