@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import auth, messages
 from .forms import UserLoginForm
 
+#Import login_required annotations
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 """ This is the landing page for user account """
@@ -34,3 +37,7 @@ def login(request):
         return render(request, 'accounts/login.template.html', {
             'form': form
         })
+        
+@login_required
+def profile(request):
+    return HttpResponse("Profile")
