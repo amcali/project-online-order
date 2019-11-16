@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<a href="{% url "view_cart" %}" class="btn btn-primary">View Cart</a>
+
 <div style="display:flex; justify-content: space-around">
     
     {% for each_product in all_products%}

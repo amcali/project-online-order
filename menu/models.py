@@ -12,3 +12,6 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.name + " : " + self.sku
+        
+    def getCostInDollars(self):
+        return self.cost/100
