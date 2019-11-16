@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from cart.models import CartItem
+from .forms import OrderForm, PaymentForm
+from django.conf import settings
+import stripe
 
 # Create your views here.
 
+""" Function to calculate the total cost of all items in user's cart """
 def calculate_cart_cost(request):
     all_cart_items = CartItem.objects.filter(owner=request.user)
     amount = 0
@@ -10,10 +14,24 @@ def calculate_cart_cost(request):
         amount += cart_item.product.cost * cart_item.quantity
     return amount
 
+""" Renders total amount user needs to pay for items in cart """
 def checkout(request):
 
     total_cost = calculate_cart_cost(request)
 
     return render(request, 'checkout/checkout.template.html', {
         'total_cost': total_cost/100
+    })
+
+""" Renders page for checkout details of items to pay for """
+def charge(request):
+    
+    amount = calculate_cart_cost(request)
+    order_form = OrderForm()
+    payment_form = PaymentForm()
+    return render(request, 'checkout/charge.template.html', {
+        'order_form': order_form,
+        'payment_form': payment_form,
+        'amount': amount,
+        'publishable': settings.STRIPE_PUBLISHABLE_KEY
     })
