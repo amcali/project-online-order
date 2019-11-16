@@ -7,3 +7,18 @@ def menu(request):
     return render(request, 'menu/menu_items.template.html', {
         'all_products': all_products
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

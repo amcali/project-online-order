@@ -1,9 +1,8 @@
 
 from django.urls import path, include
-from .views import menu_items
+from .views import menu
 
 
 urlpatterns = [
-    path('', menu_items, name="menu_items"),
-    path('accounts/', include('accounts.urls')),
+    path('', menu, name="menu"),
 ]
