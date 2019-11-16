@@ -21,7 +21,7 @@ def add_to_cart(request, product_id):
     product = Menu.objects.get(pk=product_id)
     
     #If product exists in the user's shopping cart
-    existing_cart_item = CartItem.objects.get(owner=request.user, product=product)
+    existing_cart_item = CartItem.objects.filter(owner=request.user, product=product).first()
     
     #If the item being added into the shopping cart does not exist, create a new one
     if existing_cart_item == None:
@@ -34,6 +34,14 @@ def add_to_cart(request, product_id):
         #Increase the product item quantity
         existing_cart_item.quantity += 1
         existing_cart_item.save()
+    return redirect(reverse('menu'))
+    
+
+""" Remove cart function """
+def remove_from_cart(request, cart_item_id):
+    
+    existing_cart_item = CartItem.objects.get(pk=cart_item_id)
+    existing_cart_item.delete()
     return redirect(reverse('menu'))
     
 
