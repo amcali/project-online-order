@@ -90,6 +90,10 @@ def charge(request):
                     transaction = Transaction.objects.get(pk=transaction_id)
                     transaction.status='approved'
                     transaction.save()
+                    
+                    #remove cart_items
+                    cart_items = CartItem.objects.filter(owner=request.user).delete()
+                    
                     return render(request, "checkout/payment_successful.template.html")
                 else:
                     return messages.error(request, "Your card was declined")
