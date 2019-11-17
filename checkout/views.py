@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 from cart.models import CartItem
 from .forms import OrderForm, PaymentForm
 from django.conf import settings
+from django.contrib import messages
 import stripe
 
 # Create your views here.
@@ -46,14 +47,29 @@ def charge(request):
         payment_form = PaymentForm(request.POST)
         
         if order_form.is_valid() and payment_form.is_valid():
-            customer = stripe.Charge.create(
-                amount = int(request.POST['amount']),
-                currency = 'sgd',
-                description = 'Payment',
-                card = stripeToken
-                )
-            if customer.paid:
-                return HttpResponse("Payment successful")
-            else:
-                return HttpResponse("Payment has failed")
-        return HttpResponse(stripeToken)
+            try:
+                customer = stripe.Charge.create(
+                    amount = int(request.POST['amount']),
+                    currency = 'sgd',
+                    description = 'Payment',
+                    card = stripeToken
+                    )
+                if customer.paid:
+                    return render(request, "checkout/payment_successful.template.html")
+                else:
+                    return messages.error(request, "Your card was declined")
+            except stripe.error.CardError:
+                messages.error(request, "Your card was declined")
+        else:
+            return render(request, 'checkout/charge.template.html', {
+                'order_form': order_form,
+                'payment_form': payment_form,
+                'amount': amount,
+                'publishable': settings.STRIPE_PUBLISHABLE_KEY
+            })
+        return render(request, 'checkout/charge.template.html', {
+            'order_form': order_form,
+            'payment_form': payment_form,
+            'amount': amount,
+            'publishable': settings.STRIPE_PUBLISHABLE_KEY
+        })
