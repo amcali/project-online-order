@@ -29,3 +29,15 @@ class Transaction(models.Model):
     
     def __str__(self):
         return str(self.id)
+        
+
+""" Model for Line Items """
+class LineItem(models.Model):
+    product = models.ForeignKey('menu.Menu', on_delete=models.CASCADE)
+    sku = models.CharField(max_length=255, blank=False)
+    name = models.CharField(max_length=255, blank=False)
+    cost = models.IntegerField(blank=False)
+    transaction = models.ForeignKey('Transaction', on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.product.name + " : " + self.sku

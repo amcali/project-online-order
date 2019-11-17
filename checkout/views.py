@@ -4,7 +4,7 @@ from .forms import OrderForm, PaymentForm
 from django.conf import settings
 from django.contrib import messages
 from django.utils import timezone
-from .models import Charge, Transaction
+from .models import Charge, Transaction, LineItem
 
 import stripe
 
@@ -41,6 +41,16 @@ def charge(request):
         transaction.status = "pending"
         transaction.date = timezone.now()
         transaction.save()
+        
+        all_cart_items = CartItem.objects.filter(owner=request.user)
+        for cart_item in all_cart_items:
+            lineItem = LineItem()
+            lineItem.transaction = transaction
+            lineItem.product = cart_item.product
+            lineItem.name = cart_item.product.name
+            lineItem.sku = cart_item.product.sku
+            lineItem.cost = cart_item.product.cost
+            lineItem.save()
         
         order_form = OrderForm()
         payment_form = PaymentForm()
