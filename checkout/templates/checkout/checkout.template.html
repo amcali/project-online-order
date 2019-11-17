@@ -1,6 +1,8 @@
 {% extends 'base.template.html' %}
 
 {% block content %}
+<form method="GET" action="{% url "charge" %}">
 <p>Total Amount Due: {{ total_cost }}</p>
-<a href="{% url 'charge' %}">Pay</a>
+<input type="submit" value="Pay" class="btn btn-primary" />
+</form>
 {% endblock %}

@@ -27,11 +27,33 @@ def checkout(request):
 def charge(request):
     
     amount = calculate_cart_cost(request)
-    order_form = OrderForm()
-    payment_form = PaymentForm()
-    return render(request, 'checkout/charge.template.html', {
-        'order_form': order_form,
-        'payment_form': payment_form,
-        'amount': amount,
-        'publishable': settings.STRIPE_PUBLISHABLE_KEY
-    })
+    
+    if request.method == "GET":
+        
+        order_form = OrderForm()
+        payment_form = PaymentForm()
+        return render(request, 'checkout/charge.template.html', {
+            'order_form': order_form,
+            'payment_form': payment_form,
+            'amount': amount,
+            'publishable': settings.STRIPE_PUBLISHABLE_KEY
+        })
+    else:
+        stripeToken = request.POST['stripe_id']
+        # stripe.api_key = settings.STRIPE_SECRET_KEY
+        
+        # order_form = OrderForm(request.POST)
+        # payment_form = PaymentForm(request.POST)
+        
+        # if order_form.is_valid() and payment_form.is_valid():
+        #     customer = stripe.Charge.create(
+        #         amount = int(request.POST['amount'])*100,
+        #         currency = 'sgd',
+        #         description = 'Payment',
+        #         card = stripeToken
+        #         )
+        #     if customer.paid:
+        #         return HttpResponse("Payment successful")
+        #     else:
+        #         return HttpResponse("Payment has failed")
+        return HttpResponse(stripeToken)
