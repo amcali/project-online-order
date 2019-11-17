@@ -3,6 +3,8 @@ from cart.models import CartItem
 from .forms import OrderForm, PaymentForm
 from django.conf import settings
 from django.contrib import messages
+from django.utils import timezone
+
 import stripe
 
 # Create your views here.
@@ -55,6 +57,9 @@ def charge(request):
                     card = stripeToken
                     )
                 if customer.paid:
+                    order = order_form.save(commit=False)
+                    order.date = timezone.now()
+                    order.save()
                     return render(request, "checkout/payment_successful.template.html")
                 else:
                     return messages.error(request, "Your card was declined")
