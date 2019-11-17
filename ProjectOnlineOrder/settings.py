@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    'home',
     'accounts',
     'menu',
     'cart',
@@ -140,10 +141,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # enables static files
-STATICFILES_DIR = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     ]
-
 
 AWS_S3_OBJECT_PARAMETERS={
     'Expires': 'Thu, 31 Dec 2099, 20:00:00 GMT',
