@@ -40,20 +40,20 @@ def charge(request):
         })
     else:
         stripeToken = request.POST['stripe_id']
-        # stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.api_key = settings.STRIPE_SECRET_KEY
         
-        # order_form = OrderForm(request.POST)
-        # payment_form = PaymentForm(request.POST)
+        order_form = OrderForm(request.POST)
+        payment_form = PaymentForm(request.POST)
         
-        # if order_form.is_valid() and payment_form.is_valid():
-        #     customer = stripe.Charge.create(
-        #         amount = int(request.POST['amount'])*100,
-        #         currency = 'sgd',
-        #         description = 'Payment',
-        #         card = stripeToken
-        #         )
-        #     if customer.paid:
-        #         return HttpResponse("Payment successful")
-        #     else:
-        #         return HttpResponse("Payment has failed")
+        if order_form.is_valid() and payment_form.is_valid():
+            customer = stripe.Charge.create(
+                amount = int(request.POST['amount']),
+                currency = 'sgd',
+                description = 'Payment',
+                card = stripeToken
+                )
+            if customer.paid:
+                return HttpResponse("Payment successful")
+            else:
+                return HttpResponse("Payment has failed")
         return HttpResponse(stripeToken)
