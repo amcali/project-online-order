@@ -4,6 +4,7 @@ from .forms import OrderForm, PaymentForm
 from django.conf import settings
 from django.contrib import messages
 from django.utils import timezone
+from .models import Charge, Transaction
 
 import stripe
 
@@ -32,6 +33,14 @@ def charge(request):
     amount = calculate_cart_cost(request)
     
     if request.method == "GET":
+        
+        #@todo: to prevent the same transaction being created again
+        transaction = Transaction()
+        transaction.owner = request.user
+        # transaction.cart_items = CartItem.objects.filter(owner=request.user)
+        transaction.status = "pending"
+        transaction.date = timezone.now()
+        transaction.save()
         
         order_form = OrderForm()
         payment_form = PaymentForm()
