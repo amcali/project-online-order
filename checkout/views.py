@@ -58,9 +58,16 @@ def charge(request):
             'order_form': order_form,
             'payment_form': payment_form,
             'amount': amount,
+            'transaction': transaction,
             'publishable': settings.STRIPE_PUBLISHABLE_KEY
         })
     else:
+        transaction_id = request.POST['transaction_id']
+        transaction = Transaction.objects.get(pk=transaction_id)
+        if transaction.status != 'pending':
+            return HttpReponse("Transaction has expired already")
+            
+        #payment being processed
         stripeToken = request.POST['stripe_id']
         stripe.api_key = settings.STRIPE_SECRET_KEY
         
@@ -79,6 +86,10 @@ def charge(request):
                     order = order_form.save(commit=False)
                     order.date = timezone.now()
                     order.save()
+                    
+                    transaction = Transaction.objects.get(pk=transaction_id)
+                    transaction.status='approved'
+                    transaction.save()
                     return render(request, "checkout/payment_successful.template.html")
                 else:
                     return messages.error(request, "Your card was declined")
