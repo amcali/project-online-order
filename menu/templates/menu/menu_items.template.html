@@ -12,8 +12,15 @@
             <p class="card-text">{{ each_product.description }}</p>
             
             {% if user.is_authenticated %}
+
+            {% for cart_item in all_cart_items %}
+                    <p>Quantity: {{ cart_item.quantity }}</p>            
+            {% endfor %}
             <a href="{% url "add_to_cart" product_id=each_product.id %}" class="btn btn-primary">+</a>   
-            <a href="{% url "reduce_from_cart" product_id=each_product.id %}" class="btn btn-primary">-</a>       
+            <a href="{% url "reduce_from_cart" product_id=each_product.id %}" class="btn btn-primary">-</a>
+            
+
+            
             {% endif %}
         </div>
     </div>

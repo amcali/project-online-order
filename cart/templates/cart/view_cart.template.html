@@ -1,4 +1,10 @@
 {% extends 'base.template.html' %}
+{% load static %}
+
+{% block footer_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+<script src='{% static 'cart/datetimepicker.js' %}'></script>
+{% endblock %}
 
 {% block content %}
 
@@ -19,8 +25,11 @@
             </div>
         </div>
     {% endfor %}
-    <div>
-    <a href="{% url 'checkout'%}" class="btn btn-primary">Checkout</a>
-    </div>
 
+
+  {{ date_form }}
+
+    <a href="{% url 'checkout'%}" class="btn btn-primary">Checkout</a>
+
+    
 {% endblock %}

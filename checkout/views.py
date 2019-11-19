@@ -65,7 +65,7 @@ def charge(request):
         transaction_id = request.POST['transaction_id']
         transaction = Transaction.objects.get(pk=transaction_id)
         if transaction.status != 'pending':
-            return HttpReponse("Transaction has expired already")
+            return HttpResponse("Transaction has expired already")
             
         #payment being processed
         stripeToken = request.POST['stripe_id']

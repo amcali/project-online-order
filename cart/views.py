@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from .models import CartItem
 from menu.models import Menu
+from .forms import DateForm
 
 # Create your views here.
 
@@ -8,8 +9,11 @@ from menu.models import Menu
 def view_cart(request):
     #request:user is user that is currently logged in
     all_cart_items = CartItem.objects.filter(owner=request.user)
+    date_form = DateForm()
+
     return render(request, 'cart/view_cart.template.html', {
-        'all_cart_items': all_cart_items
+        'all_cart_items': all_cart_items,
+        'date_form': date_form
     })
 
 
@@ -50,6 +54,8 @@ def reduce_from_cart(request, product_id):
     #If the item being added into the shopping cart exists, reduce from it
     if existing_cart_item != None:
         existing_cart_item.quantity -= 1
+        existing_cart_item.save()
+    if existing_cart_item == 0:
         existing_cart_item.save()
     else:
         #If the product is already 0, and user continues to reduce, then item will be removed from the cart
