@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from .models import CartItem
 from menu.models import Menu
-from .forms import DateForm
 
 # Create your views here.
 
@@ -9,11 +8,9 @@ from .forms import DateForm
 def view_cart(request):
     #request:user is user that is currently logged in
     all_cart_items = CartItem.objects.filter(owner=request.user)
-    date_form = DateForm()
 
     return render(request, 'cart/view_cart.template.html', {
-        'all_cart_items': all_cart_items,
-        'date_form': date_form
+        'all_cart_items': all_cart_items
     })
 
 
