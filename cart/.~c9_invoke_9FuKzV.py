@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from .models import CartItem
+from .forms import CollectionForm
 from menu.models import Menu
 
 # Create your views here.
@@ -12,7 +13,28 @@ def view_cart(request):
 
     return render(request, 'cart/view_cart.template.html', {
         'all_cart_items': all_cart_items,
+
     })
+
+"""Collection Date and Time """
+def collection_date_time(request):
+    collection_date_time = Collection.objects.all()
+    
+    return render(request, 'cart/collection_date_time.template.html', {
+        'collection_date_time': collection_date_time        
+    })
+    
+""" Create collection date and time set by user for cart items """
+def create_collection_date_time(request):
+    if request.method == "POST":
+        return HttpResponse("Submitted collection date and time")
+    else:
+        collection_form = CollectionForm()
+        # collection_form.owner = request.user
+        # collection_form.save()
+        return render(request, "cart/collection_date_time.template.html" ,{ 
+            'collection_form': collection_form
+        })
     
 """ Add product to cart function """
 def add_to_cart(request, product_id):
@@ -48,12 +70,12 @@ def reduce_from_cart(request, product_id):
     existing_cart_item = CartItem.objects.filter(owner=request.user, product=product).first()
     
     #If the item being added into the shopping cart exists, reduce from it
-    if existing_cart_item == None:
-        pass
-    elif existing_cart_item.quantity > 1:
+    if existing_cart_item != None:
         existing_cart_item.quantity -= 1
         existing_cart_item.save()
-    elif existing_cart_item.quantity == 1:
+    if existing_cart_item == 0:
+        existing_cart_item.save()
+    else:
         #If the product is already 0, and user continues to reduce, then item will be removed from the cart
         existing_cart_item.delete()
     return redirect(reverse('menu'))

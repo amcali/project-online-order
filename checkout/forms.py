@@ -6,7 +6,7 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Charge
         fields = (
-            'full_name', 'phone_number'
+            'full_name', 'phone_number', 'country', 'postcode', 
             )
 
 #Payment Form

@@ -3,6 +3,8 @@
 {% block content %}
 
 <div style="display:flex; justify-content: space-around">
+
+
     
     {% for each_product in all_products%}
     <div class="card" style="width: 18rem;">
@@ -13,19 +15,25 @@
             
             {% if user.is_authenticated %}
 
-            {% for cart_item in all_cart_items %}
-                    <p>Quantity: {{ cart_item.quantity }}</p>            
-            {% endfor %}
             <a href="{% url "add_to_cart" product_id=each_product.id %}" class="btn btn-primary">+</a>   
             <a href="{% url "reduce_from_cart" product_id=each_product.id %}" class="btn btn-primary">-</a>
-            
 
+
+                {% for cart_item in all_cart_items %} 
+                    {% if each_product.name == cart_item.product.name %}
+                        <p class="card-text">
+                            Quantity in cart: {{ cart_item.quantity }}
+                        </p>            
+                    {% endif %}
+                {% endfor %}
             
             {% endif %}
         </div>
     </div>
     
     {% endfor %}
+
+
     
 </div>
 

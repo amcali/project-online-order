@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 from cart.models import CartItem
 from .forms import OrderForm, PaymentForm
 from django.conf import settings
@@ -17,12 +17,13 @@ def calculate_cart_cost(request):
     for cart_item in all_cart_items:
         amount += cart_item.product.cost * cart_item.quantity
     return amount
+    
 
 """ Renders total amount user needs to pay for items in cart """
 def checkout(request):
 
     total_cost = calculate_cart_cost(request)
-
+    
     return render(request, 'checkout/checkout.template.html', {
         'total_cost': total_cost/100
     })
