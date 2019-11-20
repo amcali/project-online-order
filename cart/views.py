@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import auth, messages
 from .models import CartItem
 from menu.models import Menu
 
@@ -13,6 +14,7 @@ def view_cart(request):
     return render(request, 'cart/view_cart.template.html', {
         'all_cart_items': all_cart_items,
     })
+
     
 """ Add product to cart function """
 def add_to_cart(request, product_id):
@@ -26,6 +28,7 @@ def add_to_cart(request, product_id):
     
     #If the item being added into the shopping cart does not exist, create a new one
     if existing_cart_item == None:
+
         new_cart_item = CartItem()
         new_cart_item.product = product
         new_cart_item.owner = request.user

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse
 from cart.models import CartItem
 from .forms import OrderForm, PaymentForm
 from django.conf import settings
@@ -24,9 +24,13 @@ def checkout(request):
 
     total_cost = calculate_cart_cost(request)
     
-    return render(request, 'checkout/checkout.template.html', {
-        'total_cost': total_cost/100
-    })
+    if total_cost == 0 or total_cost == None:
+        messages.error(request, "Unable to checkout, cart is empty")
+        return redirect(reverse("view_cart"))
+    else:
+        return render(request, 'checkout/checkout.template.html', {
+            'total_cost': total_cost/100
+        })
 
 """ Renders page for checkout details of items to pay for """
 def charge(request):
