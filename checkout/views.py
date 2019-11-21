@@ -117,3 +117,9 @@ def charge(request):
             'amount': amount,
             'publishable': settings.STRIPE_PUBLISHABLE_KEY
         })
+
+def line_item(request):
+    line_item = LineItem.objects.all()
+    return render(request, 'accounts/profile.template.html', {
+        'line_item': line_item
+    })

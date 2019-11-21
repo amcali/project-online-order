@@ -4,5 +4,14 @@
 
 <h1>This is the Profile Page</h1>
 
+{% for each_line_item in line_item %}
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">{{ each_line_item.transaction }}</p>
+        <p class="card-text">{{ each_line_item.name }}</p>
+        <p class="card-text">{{ each_line_item.cost }}</p>
+    </div>
+</div>
+{% endfor %}
 
 {% endblock %}
