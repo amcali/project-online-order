@@ -45,17 +45,16 @@ def charge(request):
         # transaction.cart_items = CartItem.objects.filter(owner=request.user)
         transaction.status = "pending"
         transaction.date = timezone.now()
+        transaction.total_cost = amount
         transaction.save()
         
         all_cart_items = CartItem.objects.filter(owner=request.user)
         for cart_item in all_cart_items:
             lineItem = LineItem()
-            lineItem.transaction = transaction
             lineItem.product = cart_item.product
-            lineItem.name = cart_item.product.name
-            lineItem.sku = cart_item.product.sku
-            lineItem.cost = cart_item.product.cost
+            lineItem.quantity = cart_item.quantity
             lineItem.save()
+            transaction.line_items.add(lineItem)
         
         order_form = OrderForm()
         payment_form = PaymentForm()
@@ -117,9 +116,3 @@ def charge(request):
             'amount': amount,
             'publishable': settings.STRIPE_PUBLISHABLE_KEY
         })
-
-def line_item(request):
-    line_item = LineItem.objects.all()
-    return render(request, 'accounts/profile.template.html', {
-        'line_item': line_item
-    })

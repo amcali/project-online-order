@@ -1,6 +1,4 @@
 from django.db import models
-from datetime import datetime
-from django.db.models.fields import DateField, TimeField
 
 # Create your models here.
 #This is for the cart

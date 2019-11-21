@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import auth, messages
 from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth import get_user_model
+from checkout.views import Transaction, LineItem
 
 #Import login_required annotations
 from django.contrib.auth.decorators import login_required
@@ -48,10 +49,12 @@ def login(request):
 """ This is to ensure that user login is required in order for profile page to be accessible """        
 @login_required
 def profile(request):
+    transaction = Transaction.objects.filter(owner=request.user.id)
     User = get_user_model()
     user = User.objects.get(email=request.user.email)
     return render(request, "accounts/profile.template.html", {
-        'user': user
+        'user': user,
+        'transaction': transaction
     })
 
 """ This is the user registration function """    

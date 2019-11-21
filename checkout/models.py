@@ -15,6 +15,15 @@ class Charge(models.Model):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
         
 
+""" Model for Line Items """
+class LineItem(models.Model):
+    product = models.ForeignKey('menu.Menu', on_delete=models.CASCADE)
+    quantity = models.IntegerField(blank=False, default=0)
+
+    
+    def __str__(self):
+        return self.product.name + " : " + str(self.quantity)
+
 """ Model for Transactions """
 class Transaction(models.Model):
     status_options =[
@@ -29,18 +38,13 @@ class Transaction(models.Model):
     status = models.CharField(blank=False, choices=status_options, max_length=50)
     date = models.DateField()
     owner = models.ForeignKey("accounts.MyUser", on_delete=models.SET_NULL, null=True)
+    line_items = models.ManyToManyField(LineItem)
+    total_cost = models.IntegerField(default=0)
     
     def __str__(self):
         return str(self.id)
+
+    def getTotalCostInDollars(self):
+        return self.total_cost/100        
         
 
-""" Model for Line Items """
-class LineItem(models.Model):
-    product = models.ForeignKey('menu.Menu', on_delete=models.CASCADE)
-    sku = models.CharField(max_length=255, blank=False)
-    name = models.CharField(max_length=255, blank=False)
-    cost = models.IntegerField(blank=False)
-    transaction = models.ForeignKey('Transaction', on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return self.product.name + " : " + self.sku

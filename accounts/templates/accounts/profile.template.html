@@ -4,12 +4,15 @@
 
 <h1>This is the Profile Page</h1>
 
-{% for each_line_item in line_item %}
+{% for each_item in transaction %}
 <div class="card">
     <div class="card-body">
-        <p class="card-text">{{ each_line_item.transaction }}</p>
-        <p class="card-text">{{ each_line_item.name }}</p>
-        <p class="card-text">{{ each_line_item.cost }}</p>
+        <p class="card-text">{{ each_item.charge }}</p>
+        <p class="card-text">{{ each_item.status }}</p>
+        {% for each_line_items in each_item.line_items.all %}
+            <p class="card-text">{{ each_line_items.product.name }} x {{ each_line_items.quantity }}</p>
+        {% endfor %}
+        <p class="card-text">${{ each_item.getTotalCostInDollars }}</p>
     </div>
 </div>
 {% endfor %}
