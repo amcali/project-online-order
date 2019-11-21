@@ -1,40 +1,73 @@
 {% extends 'base.template.html' %}
+{% load static%}
 
 {% block content %}
 
-<div style="display:flex; justify-content: space-around">
+<!--<div style="display:flex; justify-content: space-around">-->
 
 
     
-    {% for each_product in all_products%}
-    <div class="card" style="width: 18rem;">
-        <img src="{{ each_product.image.url }}" class="card-img-top">
-        <div class="card-body">
-            <h5 class="card-title">{{ each_product.name }}</h5>
-            <p class="card-text">{{ each_product.description }}</p>
+<!--    {% for each_product in all_products%}-->
+<!--    <div class="card" style="width: 18rem;">-->
+<!--        <img src="{{ each_product.image.url }}" class="card-img-top">-->
+<!--        <div class="card-body">-->
+<!--            <h5 class="card-title">{{ each_product.name }}</h5>-->
+<!--            <p class="card-text">{{ each_product.description }}</p>-->
             
-            {% if user.is_authenticated %}
+<!--            {% if user.is_authenticated %}-->
 
-            <a href="{% url "add_to_cart" product_id=each_product.id %}" class="btn btn-primary">+</a>   
-            <a href="{% url "reduce_from_cart" product_id=each_product.id %}" class="btn btn-primary">-</a>
+<!--            <a href="{% url "add_to_cart" product_id=each_product.id %}" class="btn btn-primary">+</a>   -->
+<!--            <a href="{% url "reduce_from_cart" product_id=each_product.id %}" class="btn btn-primary">-</a>-->
 
 
-                {% for cart_item in all_cart_items %} 
-                    {% if each_product.name == cart_item.product.name %}
-                        <p class="card-text">
-                            Quantity in cart: {{ cart_item.quantity }}
-                        </p>            
-                    {% endif %}
-                {% endfor %}
+<!--                {% for cart_item in all_cart_items %} -->
+<!--                    {% if each_product.name == cart_item.product.name %}-->
+<!--                        <p class="card-text">-->
+<!--                            Quantity in cart: {{ cart_item.quantity }}-->
+<!--                        </p>            -->
+<!--                    {% endif %}-->
+<!--                {% endfor %}-->
             
-            {% endif %}
+<!--            {% endif %}-->
+<!--        </div>-->
+<!--    </div>-->
+<!--{% endfor %}-->
+
+        
+        <div class="row">
+
+          {% for each_product in all_products %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{{ each_product.image.url }}" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">{{ each_product.name }}</a>
+                </h4>
+                <h5>$24.99</h5>
+                <p class="card-text">{{ each_product.description }}</p>
+              </div>
+              {% if user.is_authenticated %}
+              <div class="card-footer">
+                
+                <small class="text-muted"> &nbsp; {% for cart_item in all_cart_items %}{% if each_product.name == cart_item.product.name %} Quantity in cart: {{ cart_item.quantity }} {% endif %} {% endfor %}<br>
+                    <a href="{% url "reduce_from_cart" product_id=each_product.id %}" class="btn btn-primary">-</a>
+                    <a href="{% url "add_to_cart" product_id=each_product.id %}" class="btn btn-primary">+</a> 
+                </small>
+
+              </div>
+              {% endif %}
+            </div>
+          </div>
+         {% endfor %}  
+        
+              
         </div>
-    </div>
+        <!--row-->
     
-    {% endfor %}
 
 
     
-</div>
+<!--</div>-->
 
 {% endblock%}
