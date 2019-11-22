@@ -8,7 +8,7 @@ body {
   padding-top: 56px;
 }
 
-nav, nav-item, nav-link {
+nav, nav-item, nav-link, a{
     background-color: #F4E87C;
     color: #584D3D;
 }
