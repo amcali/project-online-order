@@ -6,6 +6,7 @@ html, body {
 
 body {
   padding-top: 56px;
+  height: 100vh;
 }
 
 nav, nav-item, nav-link, a{
@@ -15,4 +16,14 @@ nav, nav-item, nav-link, a{
 
 #brand-logo {
     font-weight: 400;
+}
+
+#carousel-home-page {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+
+.subheadings {
+    
 }
