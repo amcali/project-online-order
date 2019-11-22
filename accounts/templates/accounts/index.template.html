@@ -15,14 +15,10 @@
       <div class="ml-0 col-lg-3">
 
         <h1 class="my-4">My Menu</h1>
-        {% if user.is_authenticated %}
-        <div class="list-group">
-          <a href="{% url 'user_index'%}" class="list-group-item">My Home Page</a>
-          <a href="{% url 'view_cart' %}" class="list-group-item">View Cart</a>          
-          <a href="{% url 'order_history' %}" class="list-group-item">Order History</a>
-          <a href="{% url 'logout' %}" class="list-group-item">Category 3</a>
-        {% endif %}  
-          
+
+        <p>My profile details:</p>          
+        <br>
+        
        
         </div>
 
