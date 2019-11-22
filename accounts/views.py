@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 """ This is the landing page for user account """
-def index(request):
+def user_index(request):
     return render(request, "accounts/index.template.html")
 
 """ This is the logout function """
@@ -34,7 +34,7 @@ def login(request):
             #If user exists, log them in
             if user:
                 auth.login(user=user, request=request)
-                return redirect(reverse('index'))
+                return redirect(reverse('user_index'))
             else:
                 messages.error(request, "Username or password is incorrect")
                 form = UserLoginForm()
@@ -49,11 +49,11 @@ def login(request):
 
 """ This is to ensure that user login is required in order for profile page to be accessible """        
 @login_required
-def profile(request):
+def order_history(request):
     transaction = Transaction.objects.filter(owner=request.user.id)
     User = get_user_model()
     user = User.objects.get(email=request.user.email)
-    return render(request, "accounts/profile.template.html", {
+    return render(request, "accounts/order_history.template.html", {
         'user': user,
         'transaction': transaction
     })
@@ -75,7 +75,7 @@ def register(request):
             else:
                 messages.error(request, "Registration failed")
             
-            return redirect(reverse('index'))
+            return redirect(reverse('user_index'))
             
         else:
             register_form = UserRegistrationForm()

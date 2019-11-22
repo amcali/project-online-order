@@ -15,7 +15,7 @@
         {% for each_line_items in each_item.line_items.all %}
             <p class="card-text">{{ each_line_items.product.name }} x {{ each_line_items.quantity }}</p>
         {% endfor %}
-        <p class="card-text">${{ each_item.getTotalCostInDollars }}</p>
+        <p class="card-text">${{ each_item.getTotalCostInDollars }}0</p>
     </div>
 </div>
 
