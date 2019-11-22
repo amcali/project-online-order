@@ -1,4 +1,7 @@
 {% extends 'base.template.html' %}
+{% load static %}
+
+{% block title %}{%endblock%}
 
 {% block content %}
 
@@ -15,6 +18,7 @@
         <p class="card-text">${{ each_item.getTotalCostInDollars }}</p>
     </div>
 </div>
+
 {% endfor %}
 
 {% endblock %}

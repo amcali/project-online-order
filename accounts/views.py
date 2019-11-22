@@ -3,6 +3,7 @@ from django.contrib import auth, messages
 from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth import get_user_model
 from checkout.views import Transaction, LineItem
+from home.views import home
 
 #Import login_required annotations
 from django.contrib.auth.decorators import login_required
@@ -17,7 +18,7 @@ def index(request):
 def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully logged out")
-    return redirect(index)
+    return redirect(home)
     
 """ This is the user login function """
 def login(request):

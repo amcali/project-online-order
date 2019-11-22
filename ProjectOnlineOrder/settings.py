@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    'crispy_forms',
     'home',
     'accounts',
     'menu',
@@ -144,6 +145,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AWS_S3_OBJECT_PARAMETERS={
     'Expires': 'Thu, 31 Dec 2099, 20:00:00 GMT',
