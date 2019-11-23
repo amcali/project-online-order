@@ -14,6 +14,10 @@ nav, nav-item, nav-link, a{
     color: #584D3D !important;
 }
 
+nav-link:hover{
+    background-color: red !important;
+}
+
 #business-name{
     font-weight: 600;
     text-shadow: 2px 2px #D1CECA;
@@ -50,5 +54,11 @@ h1 {
     font-family: 'Roboto', sans-serif;  
     color: #584D3D;  
     line-height: 1.5;
+}
+
+/*This is to style the item user adds to cart which the number will appear under
+each respective product under the menu page*/
+#cart-quantity {
+    background-color: yellow !important;
 }
 

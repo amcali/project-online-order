@@ -1,16 +1,18 @@
 {% extends 'base.template.html' %}
 {% load static%}
 
-{% block title %}{%endblock%}
+{% block title %} - Menu{%endblock%}
+
+{% block h1 %}Menu{%endblock%}
 
 {% block content %}
 
-<div style="display:flex; justify-content: space-around">
+<div class="row d-flex justify-content-around">
 
 
     
     {% for each_product in all_products%}
-    <div class="card" style="width: 18rem;">
+    <div class="card m-2" style="width: 18rem;">
         <img src="{{ each_product.image.url }}" class="card-img-top">
         <div class="card-body">
             <h5 class="card-title">{{ each_product.name }}</h5>
@@ -21,15 +23,15 @@
             <a href="{% url "add_to_cart" product_id=each_product.id %}" class="btn btn-primary">+</a>   
             <a href="{% url "reduce_from_cart" product_id=each_product.id %}" class="btn btn-primary">-</a>
 
-
-                {% for cart_item in all_cart_items %} 
-                    {% if each_product.name == cart_item.product.name %}
-                        <p class="card-text">
-                            Quantity in cart: {{ cart_item.quantity }}
-                        </p>            
-                    {% endif %}
-                {% endfor %}
-            
+            <p class="card-text"> Quantity in cart:
+            <span id="cart-quantity">
+            {% for cart_item in all_cart_items %} 
+                {% if each_product.name == cart_item.product.name %}
+                    {{ cart_item.quantity }}
+                {% endif %}
+            {% endfor %}
+            </span>
+            </p> 
             {% endif %}
         </div>
     </div>
