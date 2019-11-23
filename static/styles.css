@@ -1,7 +1,6 @@
 html, body {
     border: 0;
     margin: 0;
-    background-color: #FCF8DB;
 }
 
 body {
@@ -11,7 +10,6 @@ body {
 
 nav, nav-item, nav-link, a{
     background-color: #F4E87C;
-    color: #584D3D;
 }
 
 #brand-logo {
@@ -24,6 +22,11 @@ nav, nav-item, nav-link, a{
     background-size: cover;    
 }
 
-.subheadings {
-    
+h1 {
+    font-family: 'Lato', sans-serif;
+}
+
+.container-fluid {
+    font-family: 'Roboto', sans-serif;  
+    color: #584D3D;  
 }

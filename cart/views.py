@@ -12,7 +12,7 @@ def view_cart(request):
     all_cart_items = CartItem.objects.filter(owner=request.user)
 
     return render(request, 'cart/view_cart.template.html', {
-        'all_cart_items': all_cart_items,
+        'all_cart_items': all_cart_items
     })
 
     
@@ -68,3 +68,4 @@ def clear_from_cart(request, cart_item_id):
     existing_cart_item = CartItem.objects.get(pk=cart_item_id)
     existing_cart_item.delete()
     return redirect(reverse('view_cart'))
+    

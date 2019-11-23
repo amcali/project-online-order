@@ -5,8 +5,11 @@
 
 {% block content %}
 
-
+<div class="row justify-content-center sub-headings"><h1>Items In Cart</h1></div>    
+<div class="ml-0 col-lg-9">
+    
     {% for cart_item in all_cart_items %}
+    
     
         <div class="media">
             <img src="{{ cart_item.product.image.url }}" class="mr-3" />
@@ -27,33 +30,6 @@
     
 
         <a type="submit" href="{% url 'checkout'%}" class="btn btn-primary">Checkout</a>
-  <div class="container">
-
-      <div class="row justify-content-center sub-headings"><h1>Welcome {{request.user.username}}</h1></div>        
-
-    <!--row-->
-    <div class="row">
-
-      <div class="ml-0 col-lg-3">
-
-        <h1 class="my-4">My Menu</h1>
-        {% if user.is_authenticated %}
-        <div class="list-group">
-          <a href="{% url 'user_index'%}" class="list-group-item">My Home Page</a>
-          <a href="{% url 'view_cart' %}" class="list-group-item">View Cart</a>          
-          <a href="{% url 'order_history' %}" class="list-group-item">Order History</a>
-          <a href="{% url 'logout' %}" class="list-group-item">Logout</a>
-        {% endif %}  
-        </div>
-
-      </div>
-    
-    </div>
-    <!--row -->
-    
-
-    
-  </div>
-  <!--container-->
+</div>
 
 {% endblock %}

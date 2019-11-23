@@ -4,6 +4,7 @@ from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth import get_user_model
 from checkout.views import Transaction, LineItem
 from home.views import home
+from menu.views import menu
 
 #Import login_required annotations
 from django.contrib.auth.decorators import login_required
@@ -11,8 +12,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 """ This is the landing page for user account """
-def user_index(request):
-    return render(request, "accounts/index.template.html")
+# def user_index(request):
+#     return render(request, "accounts/index.template.html")
 
 """ This is the logout function """
 def logout(request):
@@ -34,7 +35,7 @@ def login(request):
             #If user exists, log them in
             if user:
                 auth.login(user=user, request=request)
-                return redirect(reverse('user_index'))
+                return redirect(reverse('menu'))
             else:
                 messages.error(request, "Username or password is incorrect")
                 form = UserLoginForm()
