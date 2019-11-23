@@ -10,10 +10,13 @@ body {
 
 nav, nav-item, nav-link, a{
     background-color: #F4E87C;
+    font-family: 'Roboto', sans-serif;   
+    color: #584D3D !important;
 }
 
-#brand-logo {
-    font-weight: 400;
+#business-name{
+    font-weight: 600;
+    font-style: oblique;
 }
 
 #carousel-home-page {
@@ -23,10 +26,22 @@ nav, nav-item, nav-link, a{
 }
 
 h1 {
+    padding: 2px;
     font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    letter-spacing: 3px;    
+    display: flex;
+    justify-content: center;    
+}
+
+
+.btn{
+    background-color: #F9B22C;
 }
 
 .container-fluid {
     font-family: 'Roboto', sans-serif;  
     color: #584D3D;  
+    line-height: 1.5;
 }
+
