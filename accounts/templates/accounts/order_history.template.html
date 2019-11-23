@@ -3,19 +3,21 @@
 
 {% block title %}{%endblock%}
 
-{% block content %}
+{% block h1 %}Order History{% endblock %}
 
-<h1>This is the Profile Page</h1>
+{% block content %}
 
 {% for each_item in transaction %}
 <div class="card">
     <div class="card-body">
-        <p class="card-text">{{ each_item.charge }}</p>
-        <p class="card-text">{{ each_item.status }}</p>
+
+        <p class="card-text"><b>Order Date: </b>{{ each_item.date }}</p>
+        <p class="card-text"><b>Order Status: </b>{{ each_item.status }}</p>
+        <p class="card-text"><b>Ordered Item(s): </b></p>
         {% for each_line_items in each_item.line_items.all %}
             <p class="card-text">{{ each_line_items.product.name }} x {{ each_line_items.quantity }}</p>
         {% endfor %}
-        <p class="card-text">${{ each_item.getTotalCostInDollars }}0</p>
+        <p class="card-text"><b>Total Cost: </b>${{ each_item.getTotalCostInDollars }}0</p>
     </div>
 </div>
 

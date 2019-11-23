@@ -16,6 +16,7 @@ nav, nav-item, nav-link, a{
 
 #business-name{
     font-weight: 600;
+    text-shadow: 2px 2px #D1CECA;
     font-style: oblique;
 }
 
@@ -27,8 +28,9 @@ nav, nav-item, nav-link, a{
 
 h1 {
     padding: 2px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 600;
+    text-shadow: 1px 1px #F6F6F5;
     letter-spacing: 3px;    
     display: flex;
     justify-content: center;    
@@ -36,7 +38,12 @@ h1 {
 
 
 .btn{
-    background-color: #F9B22C;
+    background-color: #F3AB68;
+    border-color: #C78C56;
+}
+
+.btn:hover{
+    background-color:#F5BC86;
 }
 
 .container-fluid {

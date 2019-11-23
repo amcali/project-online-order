@@ -5,10 +5,11 @@
 
 {% block content %}
 <form method="GET" action="{% url "charge" %}">
-<p>Total Amount Due: ${{ total_cost }}</p>
+
+<p>Total Amount Due: ${{ total_cost }}0</p>
     <input type='hidden' value='{{ amount }}' name='amount' />
     <input type='hidden' value='{{ transaction.id }}' name='transaction_id' />
     <input type='hidden' value='{{ owner }}' name='request.user' />  
-<input type="submit" value="Pay" class="btn btn-primary" />
+<input type="submit" value="Pay" class="btn" />
 </form>
 {% endblock %}

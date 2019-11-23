@@ -1,5 +1,6 @@
 {% extends 'base.template.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 {% block footer_js %}
@@ -24,11 +25,11 @@
     </div>
     
     <div class='form-group col-md-6'>
-        {{ order_form }}
+        {{ order_form|crispy }}
     </div>
     
     <div class='form-group col-md-6'>
-        {{ payment_form }}
+        {{ payment_form|crispy }}
     </div>
     
     {% csrf_token %}
