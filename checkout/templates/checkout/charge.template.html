@@ -1,4 +1,4 @@
-{% extends 'base.template.html' %}
+{% extends 'base2.template.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -39,6 +39,7 @@
     
     <div class='form-group col-md-12'>
         <input class='btn btn-primary' id='submit_primary_btn' name='commit' type='submit' value='Submit Payment' />
+        <a class="btn btn-primary" href="{% url 'cancel_charge' %}">Cancel & Start Over</a>
     </div>
 </form>
 {% endblock %}

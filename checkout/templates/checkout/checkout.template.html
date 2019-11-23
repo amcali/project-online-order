@@ -1,15 +1,18 @@
-{% extends 'base.template.html' %}
+{% extends 'base2.template.html' %}
 {% load static %}
 
 {% block title %}{%endblock%}
 
 {% block content %}
-<form method="GET" action="{% url "charge" %}">
-
-<p>Total Amount Due: ${{ total_cost }}0</p>
-    <input type='hidden' value='{{ amount }}' name='amount' />
-    <input type='hidden' value='{{ transaction.id }}' name='transaction_id' />
-    <input type='hidden' value='{{ owner }}' name='request.user' />  
-<input type="submit" value="Pay" class="btn" />
-</form>
+<div class="row">
+    <form class="col d-flex justify-content-center" method="GET" action="{% url "charge" %}">
+    
+        <p>Total Amount Due: ${{ total_cost }}0</p>
+        <input type='hidden' value='{{ amount }}' name='amount' />
+        <input type='hidden' value='{{ transaction.id }}' name='transaction_id' />
+        <input type='hidden' value='{{ owner }}' name='request.user' />  
+        <input type="submit" value="Pay" class="btn" />
+        <a class="btn btn-primary" href="{% url 'cancel_charge' %}">Cancel & Start Over</a>
+    </form>
+</div>
 {% endblock %}

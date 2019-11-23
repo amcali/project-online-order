@@ -48,14 +48,6 @@ def charge(request):
         transaction.total_cost = amount
         transaction.save()
         
-        all_cart_items = CartItem.objects.filter(owner=request.user)
-        for cart_item in all_cart_items:
-            lineItem = LineItem()
-            lineItem.product = cart_item.product
-            lineItem.quantity = cart_item.quantity
-            lineItem.save()
-            transaction.line_items.add(lineItem)
-        
         order_form = OrderForm()
         payment_form = PaymentForm()
         return render(request, 'checkout/charge.template.html', {
@@ -95,6 +87,15 @@ def charge(request):
                     transaction.status='approved'
                     transaction.save()
                     
+                    all_cart_items = CartItem.objects.filter(owner=request.user)
+                    if transaction.status == 'approved':
+                        for cart_item in all_cart_items:
+                            lineItem = LineItem()
+                            lineItem.product = cart_item.product
+                            lineItem.quantity = cart_item.quantity
+                            lineItem.save()
+                            transaction.line_items.add(lineItem)
+                        
                     #remove cart_items
                     cart_items = CartItem.objects.filter(owner=request.user).delete()
                     
@@ -116,3 +117,19 @@ def charge(request):
             'amount': amount,
             'publishable': settings.STRIPE_PUBLISHABLE_KEY
         })
+
+def cancel_charge(request):
+    """ Cancel checkout and payment and remove all cart items """
+    
+    amount = calculate_cart_cost(request)
+    
+    all_cart_items = CartItem.objects.filter(owner=request.user)
+    transaction = Transaction()
+    transaction.owner = request.user
+    transaction.status = "cancelled"
+    transaction.date = timezone.now()
+    transaction.total_cost = amount
+    transaction.save()
+    all_cart_items = CartItem.objects.filter(owner=request.user).delete()
+    messages.error(request, "Payment cancelled and items in cart all cleared")
+    return redirect(reverse('view_cart'))

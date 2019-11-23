@@ -14,7 +14,7 @@ nav, nav-item, nav-link, a{
     color: #584D3D !important;
 }
 
-nav-link:hover{
+nav-link > a:hover{
     background-color: red !important;
 }
 

@@ -27,6 +27,7 @@ class LineItem(models.Model):
 """ Model for Transactions """
 class Transaction(models.Model):
     status_options =[
+        ('cancelled', "Cancelled"),
         ('pending', "Pending"),
         ('approved', "Approved"),
         ('rejected', "Rejected"),

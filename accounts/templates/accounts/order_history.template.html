@@ -8,6 +8,7 @@
 {% block content %}
 
 {% for each_item in transaction %}
+{% if each_item.status == 'approved' %}
     <div class="card b-3 m-3 p-3">
         <div class="card-header b-2 m-2 p-2 d-flex justify-content-center"><b>Order Date: </b>&nbsp;&nbsp;{{ each_item.date }}</div>
         <div class="card-body b-2 m-2 p-2">
@@ -23,6 +24,7 @@
         </div>
     </div>
 
+{% endif %}
 {% endfor %}
 
 {% endblock %}

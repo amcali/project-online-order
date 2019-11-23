@@ -11,14 +11,14 @@
     {% for cart_item in all_cart_items %}
     
     
-        <div class="media">
-            <img src="{{ cart_item.product.image.url }}" class="mr-3" />
-            <div class="media-body">
-                <h5 class="mt-0">{{ cart_item.product.name }}</h5>
-                <p>
+        <div class="card m-2" style="width: 18rem;"">
+            <img src="{{ cart_item.product.image.url }}" class="card-img-top" />
+            <div class="card-body">
+                <h5 class="card-title mt-0">{{ cart_item.product.name }}</h5>
+                <p class="card-text">
                     {{ cart_item.description }}
                 </p>
-                <p>
+                <p class='card-text'>
                     Cost: ${{ cart_item.product.getCostInDollars }} <br/>
                     Quantity: {{ cart_item.quantity }}
 
@@ -29,7 +29,7 @@
     {% endfor %}
     
 
-        <a type="submit" href="{% url 'checkout'%}" class="btn btn-primary">Checkout</a>
+        <a class="btn btn-primary d-flex align-item-center" type="submit" href="{% url 'checkout'%}">Checkout</a>
 </div>
 
 {% endblock %}
