@@ -8,18 +8,20 @@
 {% block content %}
 
 {% for each_item in transaction %}
-<div class="card">
-    <div class="card-body">
-
-        <p class="card-text"><b>Order Date: </b>{{ each_item.date }}</p>
-        <p class="card-text"><b>Order Status: </b>{{ each_item.status }}</p>
-        <p class="card-text"><b>Ordered Item(s): </b></p>
-        {% for each_line_items in each_item.line_items.all %}
-            <p class="card-text">{{ each_line_items.product.name }} x {{ each_line_items.quantity }}</p>
-        {% endfor %}
-        <p class="card-text"><b>Total Cost: </b>${{ each_item.getTotalCostInDollars }}0</p>
+    <div class="card b-3 m-3 p-3">
+        <div class="card-header b-2 m-2 p-2 d-flex justify-content-center"><b>Order Date: </b>&nbsp;&nbsp;{{ each_item.date }}</div>
+        <div class="card-body b-2 m-2 p-2">
+        <table class="card-text bl-2 ml-2 pl-2">  
+            <tr class="card-title b-2 m-2 p-2"><th>Transaction No.:</th><th>&nbsp;&nbsp;{{ each_item.id }}</th></tr>
+            <tr class="card-text b-2 m-2 p-2"><td><b>Order Status: </b></td><td>&nbsp;&nbsp;{{ each_item.status }}</td></tr>
+            <tr class="card-text bl-2 ml-2 pl-2"><td><b>Ordered Item(s): </b></th><th>&nbsp;</td></tr>
+            {% for each_line_items in each_item.line_items.all %}
+                <tr class="card-text bl-2 ml-2 pl-2"><td>&nbsp;</td><td>&nbsp;&nbsp;{{ each_line_items.product.name }} x {{ each_line_items.quantity }}</td></tr>
+            {% endfor %}                
+            <tr class="card-text b-2 m-2 p-2"><td><b>Total Cost: </b></td><td>&nbsp;&nbsp;${{ each_item.getTotalCostInDollars }}0</td></tr>
+        </table>
+        </div>
     </div>
-</div>
 
 {% endfor %}
 
