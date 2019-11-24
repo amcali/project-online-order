@@ -15,14 +15,14 @@
         <div class="card m-2" style="width: 18rem;"">
             <img src="{{ cart_item.product.image.url }}" class="card-img-top" />
             <div class="card-body">
-                <h5 class="card-title mt-0">{{ cart_item.product.name }}</h5>
+                <h5 class="card-title mt-0"><b>{{ cart_item.product.name }}</b></h5>
                 <p class="card-text">
                     {{ cart_item.description }}
                 </p>
                 <p class='card-text p-2'>
-                    Cost: ${{ cart_item.product.getCostInDollars }} 
+                    <b>Cost:</b> ${{ cart_item.product.getCostInDollars }}0 
                     <br/>
-                    Quantity: {{ cart_item.quantity }}
+                    <b>Quantity:</b> {{ cart_item.quantity }}
 
                     <a href="{% url 'clear_from_cart' cart_item_id=cart_item.id %}" class=" m-2 d-block btn btn-primary">Clear</a>
                 </p>

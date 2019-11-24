@@ -52,12 +52,20 @@ h1 {
     text-align: center;
 }
 
-#checkout-btn{
-    background-color: #B9F5D8;
+.btn:hover{
+    background-color:#F5BC86;
 }
 
-#checkout-btn:hover, .btn:hover{
-    background-color:#F5BC86;
+#checkout-btn{
+    background-color: #BADDC1; 
+}
+
+#checkout-btn:hover{
+    background-color: #C8E4CD;
+}
+
+#carousel-panel1, #carousel-panel2, #carousel-panel1:hover, #carousel-panel2:hover{
+    background-color: transparent;
 }
 
 

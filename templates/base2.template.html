@@ -61,6 +61,11 @@
       </nav>
       
 
+        {% if request.user.username %}
+        <span class="b-3 m-3 p-3 alert alert-info">
+            Logged in as: {{request.user.username}}
+        </span>
+        {% endif %}
 
         {% if messages %}
         <div class="alert alert-success">
@@ -70,9 +75,6 @@
         </div>
         {% endif %}
         
-        {% if request.user.username %}
-            Logged in as: {{request.user.username}}
-        {% endif %}
         
         <div class="container">
         <h1>{% block h1%}{%endblock%}</h1>
