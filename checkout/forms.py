@@ -1,7 +1,7 @@
 from .models import Charge
 from django import forms
 
-#Form for user end
+#Form for user end to insert contact details to deliver order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Charge

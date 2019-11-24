@@ -1,15 +1,16 @@
+<!--This is the user login page-->
+
 {% extends 'base.template.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
 {% block title %} - Login{%endblock%}
 
-
 {% block h1 %}Login{% endblock %}
+
 {% block content %}
 
-
-
+<!--user login form-->
 <form class="col-lg-8" method="POST">
     {% csrf_token%}
     {{ form|crispy }}

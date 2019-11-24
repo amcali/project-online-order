@@ -9,17 +9,15 @@ from menu.views import menu
 #Import login_required annotations
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+# Start of views.
 
-""" This is the landing page for user account """
-# def user_index(request):
-#     return render(request, "accounts/index.template.html")
 
 """ This is the logout function """
 def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully logged out")
     return redirect(home)
+
     
 """ This is the user login function """
 def login(request):
@@ -32,7 +30,7 @@ def login(request):
             #check if the user name and password match
             user = auth.authenticate(username=request.POST['username'],
                                     password=request.POST['password'])
-            #If user exists, log them in
+            #If user exists, user will be logged in
             if user:
                 auth.login(user=user, request=request)
                 return redirect(reverse('menu'))
@@ -48,7 +46,9 @@ def login(request):
             'form': form
         })
 
-""" This is to ensure that user login is required in order for profile page to be accessible """        
+
+""" This is to ensure that user login is required in order for profile page to be accessible """ 
+""" Under this view, the transactions which user has made will be filtered and displayed under the Order History page """
 @login_required
 def order_history(request):
     transaction = Transaction.objects.filter(owner=request.user.id)
@@ -58,6 +58,7 @@ def order_history(request):
         'user': user,
         'transaction': transaction
     })
+
 
 """ This is the user registration function """    
 def register(request):

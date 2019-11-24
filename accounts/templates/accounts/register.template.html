@@ -1,3 +1,4 @@
+<!--This is the user registration page-->
 {% extends 'base.template.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
@@ -7,13 +8,11 @@
 {% block h1 %}Register{% endblock %}
 {% block content %}
 
-
-
+<!--registration form-->
 <form class="col-lg-8" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
     <input type="submit" value="Register" class="btn" />
-    
 </form>
 
 {% endblock %}

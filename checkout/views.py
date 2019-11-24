@@ -10,6 +10,7 @@ import stripe
 
 # Create your views here.
 
+
 """ Function to calculate the total cost of all items in user's cart """
 def calculate_cart_cost(request):
     all_cart_items = CartItem.objects.filter(owner=request.user)
@@ -32,6 +33,7 @@ def checkout(request):
             'total_cost': total_cost/100
         })
 
+
 """ Renders page for checkout details of items to pay for """
 def charge(request):
     
@@ -42,7 +44,6 @@ def charge(request):
         #@todo: to prevent the same transaction being created again
         transaction = Transaction()
         transaction.owner = request.user
-        # transaction.cart_items = CartItem.objects.filter(owner=request.user)
         transaction.status = "pending"
         transaction.date = timezone.now()
         transaction.total_cost = amount
@@ -118,9 +119,10 @@ def charge(request):
             'publishable': settings.STRIPE_PUBLISHABLE_KEY
         })
 
+
+""" Cancel transaction during checkout and prior to payment submission. All items in shoppping cart will be removed"""
 def cancel_charge(request):
-    """ Cancel checkout and payment and remove all cart items """
-    
+
     amount = calculate_cart_cost(request)
     
     all_cart_items = CartItem.objects.filter(owner=request.user)

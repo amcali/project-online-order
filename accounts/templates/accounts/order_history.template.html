@@ -1,3 +1,5 @@
+<!--This is the user's order history page-->
+
 {% extends 'base.template.html' %}
 {% load static %}
 
@@ -7,6 +9,8 @@
 
 {% block content %}
 
+<!--diplay orders which have been approved, ie. successful payment has been made-->
+<!--Each transaction will have its order date, transaction number, order status, items ordered, and total cost-->
 {% for each_item in transaction %}
 {% if each_item.status == 'approved' %}
     <div class="card b-3 m-3 p-3">

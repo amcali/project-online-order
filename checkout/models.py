@@ -45,6 +45,7 @@ class Transaction(models.Model):
     def __str__(self):
         return str(self.id)
 
+    # Conversion of order cost amount from cents to dollar
     def getTotalCostInDollars(self):
         return self.total_cost/100        
         

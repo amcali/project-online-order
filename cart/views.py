@@ -6,9 +6,9 @@ from menu.models import Menu
 # Create your views here.
 
 
-"""View products ordered """
+""" View products ordered """
 def view_cart(request):
-    #request:user is user that is currently logged in
+    # request:user is user that is currently logged in
     all_cart_items = CartItem.objects.filter(owner=request.user)
 
     return render(request, 'cart/view_cart.template.html', {
@@ -20,13 +20,13 @@ def view_cart(request):
 def add_to_cart(request, product_id):
     
 
-    #Identifies the product type being purchased
+    # Identifies the product type being purchased
     product = Menu.objects.get(pk=product_id)
     
     #If product exists in the user's shopping cart
     existing_cart_item = CartItem.objects.filter(owner=request.user, product=product).first()
     
-    #If the item being added into the shopping cart does not exist, create a new one
+    # If the item being added into the shopping cart does not exist, create a new one
     if existing_cart_item == None:
 
         new_cart_item = CartItem()
@@ -44,13 +44,14 @@ def add_to_cart(request, product_id):
 """ Reduce product quantity in cart function """
 def reduce_from_cart(request, product_id):
     
-    #Identifies the product type being purchased
+    # Identifies the product type being purchased
     product = Menu.objects.get(pk=product_id)
     
-    #If product exists in the user's shopping cart
+    # If product exists in the user's shopping cart
     existing_cart_item = CartItem.objects.filter(owner=request.user, product=product).first()
     
-    #If the item being added into the shopping cart exists, reduce from it
+    # If the item being added into the shopping cart exists, reduce from it
+    # If the item being reduced from shopping cart does not exist, pass 
     if existing_cart_item == None:
         pass
     elif existing_cart_item.quantity > 1:

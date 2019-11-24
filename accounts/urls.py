@@ -1,3 +1,4 @@
+#accounts app urls
 from django.urls import path, include
 from .views import register, login, order_history, logout
 from checkout.views import charge
