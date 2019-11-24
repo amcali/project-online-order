@@ -75,6 +75,11 @@ h1 {
     line-height: 1.5;
 }
 
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th {
+    border: none;
+}
+
 /*This is to style the item user adds to cart which the number will appear under
 each respective product under the menu page*/
 #cart-quantity {
