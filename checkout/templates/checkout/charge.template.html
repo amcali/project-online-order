@@ -13,33 +13,36 @@
 <script src='{% static 'checkout/stripe.js' %}'></script>
 {% endblock%}
 
-{% block title %}{%endblock%}
+{% block title %} - Payment{%endblock%}
+
+{% block h1 %} Payment {% endblock %}
 
 {% block content %}
-
-<form role="form" method='POST' id='payment-form'>
-    <legend>Payment Details</legend>
-
-    <div class='alert alert-danger' id="credit-card-errors" style="display:none">
-        <p id="stripe-error-message"></p>
-    </div>
+<div class="pt-2 mt-2">
+    <form role="form" method='POST' id='payment-form'>
+        <legend>Payment Details</legend>
     
-    <div class='form-group col-md-6'>
-        {{ order_form|crispy }}
-    </div>
-    
-    <div class='form-group col-md-6'>
-        {{ payment_form|crispy }}
-    </div>
-    
-    {% csrf_token %}
-    
-    <input type='hidden' value='{{ amount }}' name='amount' />
-    <input type='hidden' value='{{ transaction.id }}' name='transaction_id' />
-    
-    <div class='form-group col-md-12'>
-        <input class='btn btn-primary' id='submit_primary_btn' name='commit' type='submit' value='Submit Payment' />
-        <a class="btn btn-primary" href="{% url 'cancel_charge' %}">Cancel & Start Over</a>
-    </div>
-</form>
+        <div class='alert alert-danger' id="credit-card-errors" style="display:none">
+            <p id="stripe-error-message"></p>
+        </div>
+        
+        <div class='form-group col-md-6'>
+            {{ order_form|crispy }}
+        </div>
+        
+        <div class='form-group col-md-6'>
+            {{ payment_form|crispy }}
+        </div>
+        
+        {% csrf_token %}
+        
+        <input type='hidden' value='{{ amount }}' name='amount' />
+        <input type='hidden' value='{{ transaction.id }}' name='transaction_id' />
+        
+        <div class='form-group col-md-12'>
+            <input class='btn btn-primary' id='submit_primary_btn' name='commit' type='submit' value='Submit Payment' />
+            <a class="btn btn-primary" href="{% url 'cancel_charge' %}">Cancel</a>
+        </div>
+    </form>
+</div>    
 {% endblock %}
