@@ -18,6 +18,11 @@ nav-link, a:hover{
     background-color: #F7C99E;
 }
 
+#contact-number{
+    font-family: 'Roboto', sans-serif;   
+    color: #584D3D;
+}
+
 #business-name{
     font-weight: 600;
     text-shadow: 2px 2px #D1CECA;
@@ -47,9 +52,14 @@ h1 {
     text-align: center;
 }
 
-.btn:hover{
+#checkout-btn{
+    background-color: #B9F5D8;
+}
+
+#checkout-btn:hover, .btn:hover{
     background-color:#F5BC86;
 }
+
 
 .container-fluid {
     font-family: 'Roboto', sans-serif;  

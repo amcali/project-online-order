@@ -3,9 +3,12 @@
 
 {% block title %} - Payment Confirmation{%endblock%}
 
-{% block h1 %}Your payment was successful{% endblock %}
+{% block h1 %}Payment Successful{% endblock %}
+
 {% block content %}
-
-<p>Thank you for ordering with us. Please feel free to contact us if you have any further queries. </p>
-
+<div class="d-flex flex-column justify-content-center">
+    <div class="p-2 row d-flex justify-content-center">Thank you for ordering with us.</div>
+    <div class="p-2 row d-flex justify-content-center">Your order details may be viewed&nbsp;<a id="contact-number" href="{% url 'order_history'%}">here</a>.</div>
+    <div class="p-2 row d-flex justify-content-center">Please contact us at 12345678 for any queries or any assistance required with your order.</div>
+</div>
 {% endblock %}

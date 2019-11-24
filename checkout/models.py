@@ -8,8 +8,8 @@ class Charge(models.Model):
     phone_number = models.CharField(max_length=20, blank=False)
     street_address1 = models.CharField(max_length=40, blank=False)
     street_address2 = models.CharField(max_length=40, blank=True)
-    postcode = models.CharField(max_length=20, blank=True)
-    date=models.DateField()
+    postcode = models.CharField(max_length=6, blank=False)
+    date = models.DateField()
     
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)

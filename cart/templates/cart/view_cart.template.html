@@ -7,7 +7,7 @@
 
 <div class="row justify-content-center sub-headings"><h1>Items In Cart</h1></div> 
 
-<div class="container ml-0 pl-2 pt-3 mt-3 col-lg-9 d-flex justify-content-center">
+<div class="row ml-0 pl-2 pt-3 mt-3 d-flex justify-content-center">
     
     {% for cart_item in all_cart_items %}
     
@@ -19,18 +19,19 @@
                 <p class="card-text">
                     {{ cart_item.description }}
                 </p>
-                <p class='card-text'>
-                    Cost: ${{ cart_item.product.getCostInDollars }} <br/>
+                <p class='card-text p-2'>
+                    Cost: ${{ cart_item.product.getCostInDollars }} 
+                    <br/>
                     Quantity: {{ cart_item.quantity }}
 
-                    <a href="{% url 'clear_from_cart' cart_item_id=cart_item.id %}" class="btn btn-primary">Clear</a>
+                    <a href="{% url 'clear_from_cart' cart_item_id=cart_item.id %}" class=" m-2 d-block btn btn-primary">Clear</a>
                 </p>
             </div>
         </div>
     {% endfor %}
 </div>
-<div class="d-flex justify-content-center" mt-2 pt-2>
-    <a class="btn btn-primary" type="submit" href="{% url 'checkout'%}">Checkout</a>
+<div class="d-block d-flex justify-content-center" m-3 p-3>
+    <a class="btn btn-primary" id="checkout-btn" type="submit" href="{% url 'checkout'%}">Checkout</a>
 </div>
 
 {% endblock %}
