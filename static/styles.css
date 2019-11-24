@@ -14,8 +14,8 @@ nav, nav-item, nav-link, a{
     color: #584D3D !important;
 }
 
-nav-link > a:hover{
-    background-color: red !important;
+nav-link, a:hover{
+    background-color: #F7C99E;
 }
 
 #business-name{
@@ -44,6 +44,7 @@ h1 {
 .btn{
     background-color: #F3AB68;
     border-color: #C78C56;
+    text-align: center;
 }
 
 .btn:hover{

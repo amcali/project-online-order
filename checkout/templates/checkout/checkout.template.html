@@ -4,15 +4,17 @@
 {% block title %}{%endblock%}
 
 {% block content %}
-<div class="row">
+<div class="row" style="background-color: green; height: 200px;">
     <form class="col d-flex justify-content-center" method="GET" action="{% url "charge" %}">
     
-        <p>Total Amount Due: ${{ total_cost }}0</p>
+        <div>Total Amount Due: ${{ total_cost }}0</div>
+
         <input type='hidden' value='{{ amount }}' name='amount' />
         <input type='hidden' value='{{ transaction.id }}' name='transaction_id' />
         <input type='hidden' value='{{ owner }}' name='request.user' />  
         <input type="submit" value="Pay" class="btn" />
-        <a class="btn btn-primary" href="{% url 'cancel_charge' %}">Cancel & Start Over</a>
     </form>
+        <a class="btn btn-primary" href="{% url 'cancel_charge' %}">Cancel & Start Over</a>
+    
 </div>
 {% endblock %}
