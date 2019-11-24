@@ -1,20 +1,26 @@
 {% extends 'base2.template.html' %}
 {% load static %}
 
-{% block title %}{%endblock%}
+{% block title %} - Checkout{% endblock %}
+{% block h1%}Checkout{% endblock %}
 
 {% block content %}
-<div class="row" style="background-color: green; height: 200px;">
-    <form class="col d-flex justify-content-center" method="GET" action="{% url "charge" %}">
+<div class="pt-3 mt-3 row d-flex flex-column align-items-center justify-content-center style="background-color: green; height: 200px;">
+    <form method="GET" action="{% url "charge" %}">
     
-        <div>Total Amount Due: ${{ total_cost }}0</div>
+        <div class="p-3 m-3 d-flex justfy-content-center align-self-center" style="background-color: #FBE8D5;"><b>Total Amount Due: ${{ total_cost }}0</b></div>
 
         <input type='hidden' value='{{ amount }}' name='amount' />
         <input type='hidden' value='{{ transaction.id }}' name='transaction_id' />
         <input type='hidden' value='{{ owner }}' name='request.user' />  
-        <input type="submit" value="Pay" class="btn" />
+        <div class="pt-3 mt-3 d-flex flex-row justify-content-center">
+        
+            <div class="p-2 m-3"><input type="submit" value="Pay" class="btn" /></div>
+            <div class="p-2 m-3"><a class="btn btn-primary" href="{% url 'cancel_charge' %}">Cancel</a></div>
+        
+        </div>
     </form>
-        <a class="btn btn-primary" href="{% url 'cancel_charge' %}">Cancel & Start Over</a>
+
     
 </div>
 {% endblock %}
