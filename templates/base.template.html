@@ -1,3 +1,4 @@
+<!--Generic Base template to render style and standardised structure to all pages except during checkout and payment-->
 {% load static %}
 
 <!doctype html>
@@ -18,22 +19,22 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css" />
     <title>Sofia's Pizza - {% block title %}{%endblock%}</title>
   </head>
-  <body>
-    <div class='container-fluid'>
-
   
+  <body>
+    
+    <div class='container-fluid'>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top p-2">
-        <div class="container">
-          <a class="navbar-brand" id="business-name" href="{% url 'home' %}" data-toggle="tooltip" data-placement="bottom" title="Home">SOFIA'S PIZZA</a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <div class="container">
+            <a class="navbar-brand" id="business-name" href="{% url 'home' %}" data-toggle="tooltip" data-placement="bottom" title="Home">SOFIA'S PIZZA</a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'about_us' %}">ABOUT
-                </a>
+                <a class="nav-link" href="{% url 'about_us' %}">ABOUT</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'menu' %}">MENU</a>
@@ -41,6 +42,7 @@
               
               <div class="dropdown-divider"></div>
               
+              <!--If user is not logged in, Login and user registration nav links will display-->
               {% if not user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'user_register' %}">REGISTER</a>
@@ -49,7 +51,8 @@
                 <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
               </li>
               {% endif %}
-              
+            
+              <!--If user is logged in, features available to registered users will display: shopping cart, order history and logout-->
               {% if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'view_cart' %}">CART</a>
@@ -61,14 +64,12 @@
                 <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
               </li>                
               {% endif %}   
-
-              
-              
             </ul>
           </div>
         </div>
       </nav>
       
+        <!--Displays username of user that is logged in-->
         {% if request.user.username %}
         <span class="b-3 m-3 p-3 alert alert-info">
             Logged in as: {{request.user.username}}
@@ -77,17 +78,15 @@
 
         {% if messages %}
         <div class="alert alert-success">
-            {% for m in messages%}
-                {{ m }}
-            {% endfor %}
+          {% for m in messages%}
+            {{ m }}
+          {% endfor %}
         </div>
         {% endif %}
-        
-
-        
+    
         <div class="container">
-        <h1>{% block h1%}{%endblock%}</h1>
-        {% block content %}{% endblock %}
+          <h1>{% block h1%}{%endblock%}</h1>
+          {% block content %}{% endblock %}
         </div>        
         
     </div>

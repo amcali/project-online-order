@@ -1,3 +1,4 @@
+<!--This is the Menu page. Upon user login, the user is able to add menu items from this page into their shopping cart-->
 {% extends 'base.template.html' %}
 {% load static%}
 
@@ -7,23 +8,28 @@
 
 {% block content %}
 
-
 <div class="row d-flex justify-content-around">
 
-
-    
+    <!--Displays all menu item products-->
     {% for each_product in all_products%}
     <div class="card m-2" style="width: 18rem;">
+        <!--Product Image-->
         <img src="{{ each_product.image.url }}" class="card-img-top">
         <div class="card-body">
+            <!--Product Name-->
             <h5 class="card-title"><b>{{ each_product.name }}</b></h5>
+            <!--Product Description-->
             <p class="card-text">{{ each_product.description }}</p>
             
+            <!--Only if user is logged in, can the user add items to cart-->
             {% if user.is_authenticated %}
 
+            <!--Button to add menu item to shopping cart-->
             <a href="{% url "add_to_cart" product_id=each_product.id %}" class="btn btn-primary">+</a>   
+            <!--Button to reduce menu item quantity that is currently in shopping cart-->
             <a href="{% url "reduce_from_cart" product_id=each_product.id %}" class="btn btn-primary">-</a>
 
+            <!--Shows quantity of each menu item that is in user shopping cart-->
             <p class="card-text"> Quantity in cart:
             <span id="cart-quantity">
             {% for cart_item in all_cart_items %} 
@@ -36,16 +42,9 @@
             {% endif %}
         </div>
     </div>
-{% endfor %}
-
-        
-
-
-    
-
+    {% endfor %}
 
     
 </div>
-
 
 {% endblock%}

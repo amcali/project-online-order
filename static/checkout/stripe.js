@@ -1,5 +1,6 @@
+// This is the function for processing stripe payment
 $(function(){
-    //#1 when form is submitted
+    //when payment form is submitted
     $("#payment-form").submit(function() {
         alert("submitted")
         var form = this;

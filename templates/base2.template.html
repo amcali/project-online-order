@@ -1,3 +1,6 @@
+<!--This Base template renders style and standardised structure to only checkout and payment pages-->
+<!--All nav links do not have any access to their pages to disable user from leaving during checkout and payment mode-->
+
 {% load static %}
 
 <!doctype html>
@@ -18,17 +21,18 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css" />
     <title>Sofia's - Dine In & Delivery - {% block title %}{%endblock%}</title>
   </head>
+  
   <body>
     <div class='container-fluid'>
-
   
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top p-2">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-2">
         <div class="container">
           <a class="navbar-brand" id="business-name" href="#" data-toggle="tooltip" data-placement="bottom" title="Not available in this view">SOFIA'S PIZZA</a>
         
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
@@ -52,41 +56,39 @@
                 <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Not available in this view">LOGOUT</a>
               </li>                
               {% endif %}   
-
-              
-              
             </ul>
           </div>
         </div>
       </nav>
+
+      {% if request.user.username %}
+      <span class="b-3 m-3 p-3 alert alert-info">
+          Logged in as: {{request.user.username}}
+      </span>
+      {% endif %}
+
+      {% if messages %}
+      <div class="alert alert-success">
+          {% for m in messages%}
+              {{ m }}
+          {% endfor %}
+      </div>
+      {% endif %}
       
-
-        {% if request.user.username %}
-        <span class="b-3 m-3 p-3 alert alert-info">
-            Logged in as: {{request.user.username}}
-        </span>
-        {% endif %}
-
-        {% if messages %}
-        <div class="alert alert-success">
-            {% for m in messages%}
-                {{ m }}
-            {% endfor %}
-        </div>
-        {% endif %}
-        
-        
-        <div class="container">
+      
+      <div class="container">
         <h1>{% block h1%}{%endblock%}</h1>
         {% block content %}{% endblock %}
-        </div>        
+      </div>        
         
     </div>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     {% block footer_js %}{% endblock %}
   </body>
 </html>

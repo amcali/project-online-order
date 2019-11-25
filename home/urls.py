@@ -1,4 +1,4 @@
-
+#home app urls
 from django.urls import path, include
 from .views import home, about_us
 

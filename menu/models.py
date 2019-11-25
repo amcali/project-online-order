@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+""" Model for menu items """
 class Menu(models.Model):
     name = models.CharField(max_length=255, blank=False)
     sku = models.CharField(max_length=100, blank=False)

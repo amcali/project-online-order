@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .models import Menu
 from cart.models import CartItem
 
-
 # Create your views here.
+""" View to render menu items and menu items in user's shopping cart """
 def menu(request):
     all_products = Menu.objects.all()
     all_cart_items = CartItem.objects.all()
