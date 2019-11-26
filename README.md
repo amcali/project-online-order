@@ -1,17 +1,26 @@
 # Sofia's Pizza
 
-One or two paragraphs providing an overview of your project.
+_One or two paragraphs providing an overview of your project.
 
-Essentially, this part is your sales pitch.
+_Essentially, this part is your sales pitch.
+
+Sofia's Pizza is a fictional delivery business in Singapore, that sells homemade pizzas. It only caters to locations in Singapore.
  
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+_Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+_In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
 - As a user type, I want to perform an action, so that I can achieve a goal.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+_This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+
+This website is for consumers who are wishing for a slice of homemade pizza, and at the convenience of having it delivered to wherever they are in Singapore.
+
+To customise to each user's expierience, the website has been set up to require the user to have an account in order to place an order.
+
+Initially upon the landing page, the carousel gives visual insight as to what the website is about. Further information about the website and its features are provided in the about page.
+Users who have an account and are authorised upon login will have access to different pages.
 
 ## Features
 
