@@ -19,6 +19,9 @@ This website is for consumers who are wishing for a slice of homemade pizza, and
 
 To customise to each user's expierience, the website has been set up to require the user to have an account in order to place an order.
 
+Initially upon the landing page, the carousel gives visual insight as to what the website is about. Further information about the website and its features are provided in the about page.
+Users who have an account and are authorised upon login will have access to different pages.
+
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
