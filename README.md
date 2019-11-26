@@ -1,8 +1,10 @@
 # Sofia's Pizza
 
-One or two paragraphs providing an overview of your project.
+_One or two paragraphs providing an overview of your project.
 
-Essentially, this part is your sales pitch.
+_Essentially, this part is your sales pitch.
+
+Sofia's Pizza is a fictional delivery business of its 
  
 ## UX
  
