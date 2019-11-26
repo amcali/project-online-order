@@ -26,7 +26,7 @@ SECRET_KEY = '@#w%+2$wj*u2u*0l5*)gy$9--cdjc-3!#x#3p$l43mz$2m#1b$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://sofias-pizza.herokuapp.com/"]
+ALLOWED_HOSTS = ["sofias-pizza.herokuapp.com"]
 
 
 # Application definition
@@ -80,13 +80,6 @@ WSGI_APPLICATION = 'ProjectOnlineOrder.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
 DATABASES = {
     'default': dj_database_url.parse('postgres://zsxohlzaexvyla:b13a3c257fe8da6792d00ce602370dfc192abc32159d7820fe0509c7c6b83f8f@ec2-174-129-254-235.compute-1.amazonaws.com:5432/d6ue88p6j03rqr')
