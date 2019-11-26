@@ -26,7 +26,7 @@ SECRET_KEY = '@#w%+2$wj*u2u*0l5*)gy$9--cdjc-3!#x#3p$l43mz$2m#1b$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://sofias-pizza.herokuapp.com/"]
 
 
 # Application definition
