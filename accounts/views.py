@@ -77,7 +77,7 @@ def register(request):
             else:
                 messages.error(request, "Registration failed")
             
-            return redirect(reverse('user_index'))
+            return redirect(reverse('home'))
             
         else:
             register_form = UserRegistrationForm()
