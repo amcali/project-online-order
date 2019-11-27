@@ -1,6 +1,6 @@
 # Sofia's Pizza
 
-Sofia's Pizza is a fictional delivery business in Singapore, that sells homemade pizzas. They focus on having an online platform to open a means to customers to be able to place orders with itemvia their website. Due to being a small enterprise, Sofia's Pizza only caters to delivery within in Singapore.
+Sofia's Pizza is a fictional delivery business in Singapore, that delivers their homemade pizzas to any doorstep in Singapore. They focus on having an online platform to open a means to customers to be able to place orders with itemvia their website. Due to being a small enterprise, Sofia's Pizza only caters to delivery within in Singapore.
 
 This project is the representation of Sofia's Pizza's online website acting as their commercial platform to enable users to order from them and pay for their orders online. The link to the website is available [here](https://https://sofias-pizza.herokuapp.com)
  
@@ -59,7 +59,7 @@ In addition, you may also use this section to discuss plans for additional featu
 - Displaying 'cart is empty' on cart page if there are no items in the shopping cart.
 - Close down account - This enables users who do not wish to have an active account to close it.
 - Favourites list - This would enable users to be able to immediately add their favourite choices of menu items, or a history order to be immediately recalled by the user and re-ordered. This function will assist customers who have their usual order to save the time they would take to create their shopping cart from start.
-- Create a timing feature which informs user if they are able to order depending on the business hours of Sofia's Pizza.
+- Create a timing validator as to when the user is eligible to place an order, which relies on the operation hours of Sofia's Pizza.
 
 
 
@@ -103,7 +103,34 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+
+Documentation of the code for this project can be found on GitHub via this [repository.](https://github.com/amcali/project-online-order)
+Static files used for this project have been stored onto AWS S3 Bucket.
+Postgres has been used to store all data.
+
+The project was created on AWS Cloud9, and from which had been deployed onto Heroku as follows:
+
+sudo install heroku --classic
+sudo apt install libpq-dev python3-dev
+sudo pip3 install gunicorn
+heroku create sofias-pizza
+heroku addons:create heroku-postgresql
+sudo pip3 install dj_database_url
+python3 manage.py migrate
+
+heroku config: 
+
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+STRIPE_PUBLISHABLE_KEY
+STRIPE_SECRET_KEY
+
+Update requirements.txt and create Procfile for the purpose of deploying the project to Heroku.
+
+Once deployment on heroku is done, a superuser is created on heroku.
+
+
+_This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
 - Different values for environment variables (Heroku Config Vars)?
@@ -116,11 +143,17 @@ In addition, if it is not obvious, you should also describe how to run your code
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The text in the [About Us](https://sofias-pizza.herokuapp.com/home/about) was sourced from [Pastamania](https://www.pastamania.com.sg)
 
 ### Media
-- The photos used in this site were obtained from ...
+- Photos used for the [Landing Page](https://sofias-pizza.herokuapp.com/home) are from [Pexels](https://www.pexels.com)
+- Photos used for the [Menu Page](https://sofias-pizza.herokuapp.com/menu) are from [Pastamania](https://www.pastamania.com.sg)
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from the following websites:
+[Pastamania](https://www.pastamania.com.sg) 
+[Lieferando.de](https://www.lieferando.de/en/sofias-hamburg)
+
+All materials and content in this project are solely for educational purposes.
+
