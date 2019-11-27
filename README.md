@@ -1,48 +1,84 @@
 # Sofia's Pizza
 
-_One or two paragraphs providing an overview of your project.
+Sofia's Pizza is a fictional delivery business in Singapore, that sells homemade pizzas. They focus on having an online platform to open a means to customers to be able to place orders with itemvia their website. Due to being a small enterprise, Sofia's Pizza only caters to delivery within in Singapore.
 
-_Essentially, this part is your sales pitch.
-
-Sofia's Pizza is a fictional delivery business in Singapore, that sells homemade pizzas. It only caters to locations in Singapore.
+This project is the representation of Sofia's Pizza's online website acting as their commercial platform to enable users to order from them and pay for their orders online. The link to the website is available [here](https://https://sofias-pizza.herokuapp.com)
  
 ## UX
- 
-_Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-_In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+Aside from creating an online presence for the business, the website also allows users to place orders and pay online for them on the basis of having an account. Anyone who does not have an account is able to register for one, provided that they create a unique username, and an email address that has not been used before.
 
-_This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+A wireframe of the website may be found [here.](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Wireframe.pdf)
 
-This website is for consumers who are wishing for a slice of homemade pizza, and at the convenience of having it delivered to wherever they are in Singapore.
-
-To customise to each user's expierience, the website has been set up to require the user to have an account in order to place an order.
+This website is for consumers who are wishing for a slice of homemade pizza, and at the convenience of having it delivered to wherever they are in Singapore. To customise to each user's expierience, the website has been set up to require the user to have an account in order to place an order.
 
 Initially upon the landing page, the carousel gives visual insight as to what the website is about. Further information about the website and its features are provided in the about page.
 Users who have an account and are authorised upon login will have access to different pages.
 
+An unregistered user or a user who is not logged into their account will have access to the following pages:
+
+Home Page - This represents the landing page
+Register - This is to sign up for a new account
+Login - This is for registered users to login to their account
+About - This explains what the website is about, and outlines the procedure on how to order
+Menu - This gives a list of the menu items which Sofia's Pizza is selling for their delivery service
+
+
+A logged in user will have access to the following pages accessible:
+Home Page - This represents the landing page and is visually the same as that for a user who is not logged in.
+Menu - Under the mode that a user is logged in, this page will act as a 'shop' page, whereby the items displayed will have an 'add to cart' feature available to them to do their ordering.
+Cart - Displays all items in the user's shopping cart.
+Order History - Displays the user's history of orders for which payment was successful.
+Logout - Allows the user to logout of their account, and redirects to the landing page.
+
+
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
+
 ### Existing Features
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
 - ...
+
+- The following features are available on the website:
+
+- User Registration - This allows a new user to create an account, which requires creating a unique non-existent username, registering a non-existing email address and password.
+- Account login - This allows an existing user to login to their account.
+- Menu Ordering - This allows the user to view the menu items which Sofia's Pizza sells. For users that are logged into their account, there is an add/remove feature on this page which enables the logged in user to add the items to their shopping cart.
+- View Cart - This allows the user to view the menu items and their added quantities into their shopping cart.
+- Checkout - This enables the user to proceed to checkout their shopping cart items, so long as the cart is not empty. On this page, the user has an option to clear any menu items from their shopping cart before proceeding to checkout.
+- Payment - This enables the user to make payment, which is managed by stripe.
+- Payment History - Upon successful payment, the user will view their paid transactions on this page.
+- Logout - This page enables logged in users to log out of their account.
 
 For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
-- Another feature idea
+- Reset password - This is to enable registered users to reset their password in the event they may have forgotten it, or wish to amend it.
+- Displaying 'cart is empty' on cart page if there are no items in the shopping cart.
+- Close down account - This enables users who do not wish to have an active account to close it.
+- Favourites list - This would enable users to be able to immediately add their favourite choices of menu items, or a history order to be immediately recalled by the user and re-ordered. This function will assist customers who have their usual order to save the time they would take to create their shopping cart from start.
+- Create a timing feature which informs user if they are able to order depending on the business hours of Sofia's Pizza.
+
+
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+_In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
+- AWS Cloud9
+- HTML
+- CSS
+- Bootstrap
+- Django
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
+- Postgres
+- AWS S3
+- Stripe
+- Github
+- Heroku
 
 
 ## Testing
