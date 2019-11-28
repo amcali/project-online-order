@@ -9,10 +9,11 @@ This project is the representation of Sofia's Pizza's online website acting as t
 Aside from creating an online presence for the business, the website also allows users to place orders and pay online for them on the basis of having an account. Anyone who does not have an account is able to register for one, provided that they create a unique username, and an email address that has not been used before.
 
 A wireframe of the website may be found [here.](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Wireframe.pdf)
+A diagram of the models upon which the website is constructed from can be found [here.]()
 
 This website is for consumers who are wishing for a slice of homemade pizza, and at the convenience of having it delivered to wherever they are in Singapore. To customise to each user's expierience, the website has been set up to require the user to have an account in order to place an order.
 
-Initially upon the landing page, the carousel gives visual insight as to what the website is about. Further information about the website and its features are provided in the about page.
+Initially upon the [landing page](https://sofias-restaurant.herokuapp.com/home), the content aims to give simple yet quick insight to the user as to what the website is about. Further information about the website and its features are provided in the about page.
 Users who have an account and are authorised upon login will have access to different pages.
 
 An unregistered user or a user who is not logged into their account will have access to the following pages:
@@ -22,6 +23,13 @@ Register - This is to sign up for a new account
 Login - This is for registered users to login to their account
 About - This explains what the website is about, and outlines the procedure on how to order
 Menu - This gives a list of the menu items which Sofia's Pizza is selling for their delivery service
+
+The following scenarios address the types of options available to an unregistered user:
+1) As a user who wishes to know about the website, one would click the About link in the navigation bar access the About Page, where an overview of Sofia's Pizza business nature may be found.
+2) As a user who would like to order, one would click the Menu link in the navigation bar to access the About Page, where there is instructions on how to order.
+3) As a user who would like to know what Sofia's Pizza sells, one would click the Menu link in the navigation bar to access the Menu Page, where the food items which Sofia's Pizza is selling may be found.
+4) As a user who wishes to start ordering, one may click on the Register link in the navigation bar to create an account which is required in order to start ordering. One may refer to the About Page if in need of instructions on how to order.
+5) As a user with any enquiries, one may refer to the contact details provided in the About Page.
 
 
 A logged in user will have access to the following pages accessible:

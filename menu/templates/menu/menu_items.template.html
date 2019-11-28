@@ -19,7 +19,10 @@
             <!--Product Name-->
             <h5 class="card-title"><b>{{ each_product.name }}</b></h5>
             <!--Product Description-->
-            <p class="card-text">{{ each_product.description }}</p>
+            <p class="card-text">{{ each_product.description }}<br>
+            <b>Cost per item:</b> ${{ each_product.getCostInDollars }}0
+            </p>
+            
             
             <!--Only if user is logged in, can the user add items to cart-->
             {% if user.is_authenticated %}
