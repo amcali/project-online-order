@@ -9,11 +9,10 @@ This project is the representation of Sofia's Pizza's online website acting as t
 Aside from creating an online presence for the business, the website also allows users to place orders and pay online for them on the basis of having an account. Anyone who does not have an account is able to register for one, provided that they create a unique username, and an email address that has not been used before.
 
 A wireframe of the website may be found [here.](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Wireframe.pdf)
-A diagram of the models upon which the website is constructed from can be found [here.]()
 
 This website is for consumers who are wishing for a slice of homemade pizza, and at the convenience of having it delivered to wherever they are in Singapore. To customise to each user's expierience, the website has been set up to require the user to have an account in order to place an order.
 
-Initially upon the [landing page](https://sofias-restaurant.herokuapp.com/home), the content aims to give simple yet quick insight to the user as to what the website is about. Further information about the website and its features are provided in the about page.
+Initially upon the landing page, the carousel gives visual insight as to what the website is about. Further information about the website and its features are provided in the about page.
 Users who have an account and are authorised upon login will have access to different pages.
 
 An unregistered user or a user who is not logged into their account will have access to the following pages:
@@ -31,7 +30,6 @@ The following scenarios address the types of options available to an unregistere
 4) As a user who wishes to start ordering, one may click on the Register link in the navigation bar to create an account which is required in order to start ordering. One may refer to the About Page if in need of instructions on how to order.
 5) As a user with any enquiries, one may refer to the contact details provided in the About Page.
 
-
 A logged in user will have access to the following pages accessible:
 Home Page - This represents the landing page and is visually the same as that for a user who is not logged in.
 Menu - Under the mode that a user is logged in, this page will act as a 'shop' page, whereby the items displayed will have an 'add to cart' feature available to them to do their ordering.
@@ -39,13 +37,22 @@ Cart - Displays all items in the user's shopping cart.
 Order History - Displays the user's history of orders for which payment was successful.
 Logout - Allows the user to logout of their account, and redirects to the landing page.
 
+The following scenarios will be exclusively available to a user who has an account:
+1) As a user who wishes to order, one would click the Login link in the navigation bar to login to their account first. 
+Upon successful login, one would then be directed to the Menu Page, where the option to immediately add items to shopping cart is available.
+After using the '+' and '-' to add the specific items to the shopping cart, one would then click on the 'Cart' link in the navigation bar to access the Cart Page and view the items and their quantities prior to checkout.
+Once items in shopping cart are ready to be paid for, one would then click the 'checkout' button to view the total amount due. 
+One would then click the 'Pay' button to then complete the form with the required payment details, and then click the 'submit payment' button.
+Upon successful payment, one would then be alerted with a message that their payment has been submitted, and subsequently be directed to a 'Payment Successful' page.
+
+2) As a user who wishes to review all orders paid for, one would click the 'Order History' link in the navgation bar.
+
+3) As a use who wishes to logout of their account, one would click the 'Logout' link in the navigation bar, which would direct them to the landing page, and simultaneously be notified that have have successfully logged out.
 
 ## Features
 
 
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
 - The following features are available on the website:
 
@@ -58,9 +65,6 @@ Logout - Allows the user to logout of their account, and redirects to the landin
 - Payment History - Upon successful payment, the user will view their paid transactions on this page.
 - Logout - This page enables logged in users to log out of their account.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
 - Reset password - This is to enable registered users to reset their password in the event they may have forgotten it, or wish to amend it.
@@ -91,6 +95,7 @@ _In this section, you should mention all of the languages, frameworks, libraries
 
 ## Testing
 
+Manual testing was conducted, for which the scenarios may be found [here](https://)
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
 Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
@@ -146,6 +151,12 @@ In particular, you should provide all details of the differences between the dep
 - Separate git branch?
 
 In addition, if it is not obvious, you should also describe how to run your code locally.
+In order to run the code locally, the project may be downloaded from the [GitHub repository.](http://github.com/amcali/project-online-order)
+Django will need to be installed on the local environment in order for the project to run, and the following keys need to be implemented in the .bashrc file:
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+STRIPE_PUBLISHABLE_KEY
+STRIPE_SECRET_KEY
 
 
 ## Credits
