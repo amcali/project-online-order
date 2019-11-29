@@ -12,8 +12,6 @@ Aside from creating an online presence for the business, the website also allows
 
 A wireframe of the website may be found [here,](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Wireframe.pdf) and a diagram of the models created and used to build the website may be found [here.](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Django%20Model%20Diagram.pdf)
 
-The website's [Landing Page] Further information about the website and its features is available on the [About Page.](https://sofias-restaurant.herokuapp.com/home/about)
-
 
 #### 1) Without account login authorisation
 The following will outline the UX for an unregistered user or a user who has not logged into their account, and the pages that are available to them.
@@ -65,6 +63,7 @@ __UX Scenarios:__
 
 
 
+
 ## Features
 
 
@@ -92,6 +91,7 @@ __UX Scenarios:__
 
 
 
+
 ## Technologies Used
 
 - AWS Cloud9
@@ -108,11 +108,13 @@ __UX Scenarios:__
 
 
 
+
 ## Testing
 
 Manual testing was conducted, for which the scenarios may be found [here.](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Test%20Cases.pdf)
 
 The website has been tested to work on mobile responsive devices.
+
 
 
 
@@ -163,6 +165,7 @@ STRIPE_PUBLISHABLE_KEY
 STRIPE_SECRET_KEY
 
 After setup, a superuser needs to be created, via which the menu items have to be created in order for any items to become available for a user to be able to view and have during account login for purchasing and paying for items.
+
 
 
 
