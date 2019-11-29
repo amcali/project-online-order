@@ -105,9 +105,9 @@ _In this section, you should mention all of the languages, frameworks, libraries
 
 ## Testing
 
-Manual testing was conducted, for which the scenarios may be found [here.](https://)
+Manual testing was conducted, for which the scenarios may be found [here.](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Test%20Cases.pdf)
 
-The websit has been tested to work on mobile responsive devices.
+The website has been tested to work on mobile responsive devices.
 
 
 
