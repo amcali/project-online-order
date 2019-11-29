@@ -15,53 +15,53 @@ A wireframe of the website may be found [here,](https://github.com/amcali/projec
 The website's [Landing Page] Further information about the website and its features is available on the [About Page.](https://sofias-restaurant.herokuapp.com/home/about)
 
 
-##### 1) Without account login authorisation
+#### 1) Without account login authorisation
 The following will outline the UX for an unregistered user or a user who has not logged into their account, and the pages that are available to them.
 
-Webpages:
-[Home Page](https://sofias-restaurant.herokuapp.com/home) - This is interchangeably referred to as the Landing Page, which comprises of a carousel of images and simple content with the intention of using instant visual insight to what is Sofia's Pizza.
+__Webpages:__
+  * [Home Page](https://sofias-restaurant.herokuapp.com/home) - This is interchangeably referred to as the Landing Page, which comprises of a carousel of images and simple content with the intention of using instant visual insight to what is Sofia's Pizza.
+  * [Register](https://sofias-restaurant.herokuapp.com/account/register) - This is to sign up for a new account.
+  * [Login](https://sofias-restaurant.herokuapp.com/account/login) - This is for registered users to login to their account.
+  * [About](https://sofias-restaurant.herokuapp.com/home/about_us) - This page explains what Sofia's Pizza is about and their contact details; and outlines the procedure on how to order.
+  * [Menu](https://sofias-restaurant.herokuapp.com/menu) - This page lists the menu items which Sofia's Pizza is selling for their delivery service.
 
-[Register](https://sofias-restaurant.herokuapp.com/account/register) - This is to sign up for a new account.
-
-[Login](https://sofias-restaurant.herokuapp.com/account/login) - This is for registered users to login to their account.
-
-[About](https://sofias-restaurant.herokuapp.com/home/about) - This page explains what Sofia's Pizza is about and their contact details; and outlines the procedure on how to order.
-
-[Menu](https://sofias-restaurant.herokuapp.com/menu) - This page lists the menu items which Sofia's Pizza is selling for their delivery service.
-
-UX Scenarios:
-1) As a user who wishes to know about the website, one would click the About link in the navigation bar access the About Page, where an overview of Sofia's Pizza business nature may be found.
-2) As a user who would like to order, one would click the Menu link in the navigation bar to access the About Page, where there is instructions on how to order.
-3) As a user who would like to know what Sofia's Pizza sells, one would click the Menu link in the navigation bar to access the Menu Page, where the food items which Sofia's Pizza is selling may be found.
-4) As a user who wishes to start ordering, one may click on the Register link in the navigation bar to create an account which is required in order to start ordering. One may refer to the About Page if in need of instructions on how to order.
-5) As a user with any enquiries, one may refer to the contact details provided in the About Page.
+__UX Scenarios:__
+  1) As a user who wishes to know about the website, one would click the About link in the navigation bar access the About Page, where an overview of Sofia's Pizza business nature may be found.
+  2) As a user who would like to order, one would click the Menu link in the navigation bar to access the About Page, where there is instructions on how to order.
+  3) As a user who would like to know what Sofia's Pizza sells, one would click the Menu link in the navigation bar to access the Menu Page, where the food items which Sofia's Pizza is selling may be found.
+  4) As a user who wishes to start ordering, one may click on the Register link in the navigation bar to create an account which is required in order to start ordering. One may refer to the About Page if in need of instructions on how to order.
+  5) As a user with any enquiries, one may refer to the contact details provided in the About Page.
 
 
 
-##### 2) With User Login Access Authorisation
+#### 2) With User Login Access Authorisation
 The following will outline the webpages which a logged in user is authorised to view upon login, and their respective UX available.
 
-Webpages:
-Home Page - This represents the landing page and is visually the same as that for a user who is not logged in.
-Menu - Under the mode that a user is logged in, this page will act as a 'shop' page, whereby the items displayed will have an 'add to cart' feature available to them to do their ordering.
-Cart - Displays all items in the user's shopping cart.
-Order History - Displays the user's history of orders for which payment was successful.
-Logout - Allows the user to logout of their account, and redirects to the landing page.
 
-UX Scenarios:
-Making and Paying for an order
-1a) As a user who wishes to order, one would click the Login link in the navigation bar to login to their account first. 
-1b) Upon successful login, one would then be directed to the Menu Page, where the option to immediately add items to shopping cart is available.
-1c) After using the '+' and '-' to add the specific items to the shopping cart, one would then click on the 'Cart' link in the navigation bar to access the Cart Page and view the items and their quantities prior to checkout.
-1d) Once items in shopping cart are ready to be paid for, one would then click the 'checkout' button to view the total amount due. 
-1e) One would then click the 'Pay' button to then complete the form with the required payment details, and then click the 'submit payment' button.
-1f) Upon successful payment, one would then be alerted with a message that their payment has been submitted, and subsequently be directed to a 'Payment Successful' page.
+__Webpages:__
+  * Home Page - This represents the landing page and is visually the same as that for a user who is not logged in.
+  * Menu - Under the mode that a user is logged in, this page will act as a 'shop' page, whereby the items displayed will have an 'add to cart' feature available to them to do their ordering.
+  * Cart - Displays all items in the user's shopping cart.
+  * Order History - Displays the user's history of orders for which payment was successful.
+  * Logout - Allows the user to logout of their account, and redirects to the landing page.
 
-Viewing Orders
-2) As a user who wishes to review all orders paid for, one would click the 'Order History' link in the navgation bar.
 
-Logout
-3) As a use who wishes to logout of their account, one would click the 'Logout' link in the navigation bar, which would direct them to the landing page, and simultaneously be notified that have have successfully logged out.
+__UX Scenarios:__
+   1) Making and Paying for an order
+      * i) As a user who wishes to order, one would click the Login link in the navigation bar to login to their account first.     
+      * ii) Upon successful login, one would then be directed to the Menu Page, where the option to immediately add items to shopping cart is available.
+      * iii) After using the '+' and '-' to add the specific items to the shopping cart, one would then click on the 'Cart' link in the navigation bar to access the Cart Page and view the items and their quantities prior to checkout.
+      * iv) Once items in shopping cart are ready to be paid for, one would then click the 'checkout' button to view the total amount due. 
+      * v) One would then click the 'Pay' button to then complete the form with the required payment details, and then click the 'submit payment' button.
+      * vi) Upon successful payment, one would then be alerted with a message that their payment has been submitted, and subsequently be directed to a 'Payment Successful' page.
+
+
+   2) Viewing Orders
+      * As a user who wishes to review all orders paid for, one would click the 'Order History' link in the navgation bar.
+
+
+   3) Logout
+      * As a use who wishes to logout of their account, one would click the 'Logout' link in the navigation bar, which would direct them to the landing page, and simultaneously be notified that have have successfully logged out.
 
 
 
@@ -94,8 +94,6 @@ Logout
 
 ## Technologies Used
 
-_In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
 - AWS Cloud9
 - HTML
 - CSS
@@ -127,19 +125,28 @@ Postgres has been used to store all data.
 
 The project was created on AWS Cloud9, and from which had been deployed onto Heroku via the following BASH CLI:
 
-sudo install heroku --classic
-sudo apt install libpq-dev python3-dev
-sudo pip3 install gunicorn
-heroku create sofias-pizza
-heroku addons:create heroku-postgresql
-sudo pip3 install dj_database_url
-python3 manage.py migrate
+   `sudo install heroku --classic`
+   
+   `sudo apt install libpq-dev python3-dev`
+   
+   `sudo pip3 install gunicorn`
+   
+   `heroku create sofias-pizza`
+   
+   `heroku addons:create heroku-postgresql`
+   
+   `sudo pip3 install dj_database_url`
+   
+   `python3 manage.py migrate`
 
 Heroku Config Vars: 
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-STRIPE_PUBLISHABLE_KEY
-STRIPE_SECRET_KEY
+   `AWS_ACCESS_KEY_ID`
+   
+   `AWS_SECRET_ACCESS_KEY`
+   
+   `STRIPE_PUBLISHABLE_KEY`
+   
+   `STRIPE_SECRET_KEY`
 
 Update requirements.txt and create Procfile for the purpose of deploying the project to Heroku.
 
@@ -162,7 +169,7 @@ After setup, a superuser needs to be created, via which the menu items have to b
 ## Credits
 
 ### Content
-- The text in the [About Us](https://sofias-pizza.herokuapp.com/home/about) was sourced from [Pastamania](https://www.pastamania.com.sg)
+- The text content on the [About Page](https://sofias-pizza.herokuapp.com/home/about_us) was sourced from [Pastamania](https://www.pastamania.com.sg)
 
 ### Media
 - Photos used for the [Landing Page](https://sofias-pizza.herokuapp.com/home) are from [Pexels](https://www.pexels.com)
@@ -171,8 +178,9 @@ After setup, a superuser needs to be created, via which the menu items have to b
 ### Acknowledgements
 
 - I received inspiration for this project from the following websites:
-[Pastamania](https://www.pastamania.com.sg) 
-[Lieferando.de](https://www.lieferando.de/en/sofias-hamburg)
 
-All materials and content in this project are solely for educational purposes.
+      * [Pastamania](https://www.pastamania.com.sg) 
+      * [Lieferando.de](https://www.lieferando.de/en/sofias-hamburg)
+
+__All materials and content in this project are solely for educational purposes.__
 
