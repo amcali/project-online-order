@@ -2,7 +2,7 @@
 
 Sofia's Pizza is a fictional delivery business in Singapore, that delivers their homemade pizzas to any doorstep in Singapore. They focus on having an online platform to open a means to customers to be able to place orders with itemvia their website. Due to being a small enterprise, Sofia's Pizza only caters to delivery within in Singapore.
 
-This project resembles Sofia's Pizza's online website which serves as their commercial platform to allow users to make and pay for orders online. The link to the website is available [here.](https://https://sofias-pizza.herokuapp.com)
+This project resembles Sofia's Pizza's online website which serves as their commercial platform to allow users to make and pay for orders online. The link to the website is available [here.](https://sofias-pizza.herokuapp.com)
 
 
  
@@ -14,14 +14,19 @@ A wireframe of the website may be found [here,](https://github.com/amcali/projec
 
 The website's [Landing Page] Further information about the website and its features is available on the [About Page.](https://sofias-restaurant.herokuapp.com/home/about)
 
-### 1) Without account login authorisation
+
+##### 1) Without account login authorisation
 The following will outline the UX for an unregistered user or a user who has not logged into their account, and the pages that are available to them.
 
 Webpages:
 [Home Page](https://sofias-restaurant.herokuapp.com/home) - This is interchangeably referred to as the Landing Page, which comprises of a carousel of images and simple content with the intention of using instant visual insight to what is Sofia's Pizza.
+
 [Register](https://sofias-restaurant.herokuapp.com/account/register) - This is to sign up for a new account.
+
 [Login](https://sofias-restaurant.herokuapp.com/account/login) - This is for registered users to login to their account.
+
 [About](https://sofias-restaurant.herokuapp.com/home/about) - This page explains what Sofia's Pizza is about and their contact details; and outlines the procedure on how to order.
+
 [Menu](https://sofias-restaurant.herokuapp.com/menu) - This page lists the menu items which Sofia's Pizza is selling for their delivery service.
 
 UX Scenarios:
@@ -31,7 +36,9 @@ UX Scenarios:
 4) As a user who wishes to start ordering, one may click on the Register link in the navigation bar to create an account which is required in order to start ordering. One may refer to the About Page if in need of instructions on how to order.
 5) As a user with any enquiries, one may refer to the contact details provided in the About Page.
 
-### 2) With User Login Access Authorisation
+
+
+##### 2) With User Login Access Authorisation
 The following will outline the webpages which a logged in user is authorised to view upon login, and their respective UX available.
 
 Webpages:
