@@ -142,6 +142,7 @@ The project was created on AWS Cloud9, and from which had been deployed onto Her
    `python3 manage.py migrate`
 
 Heroku Config Vars: 
+
    `AWS_ACCESS_KEY_ID`
    
    `AWS_SECRET_ACCESS_KEY`
@@ -158,11 +159,12 @@ Via the superuser account, the menu items were created.
 
 
 In order to run the code locally, the project may be downloaded from the [GitHub repository.](http://github.com/amcali/project-online-order)
-Django will need to be installed on the local environment in order for the project to run, and the following keys need to be implemented in the .bashrc file for setup of AWS S3 Bucket and Stripe:
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-STRIPE_PUBLISHABLE_KEY
-STRIPE_SECRET_KEY
+Django will need to be installed on the local environment in order for the project to run, and the following keys need to be implemented in the `.bashrc` file for setup of AWS S3 Bucket and Stripe:
+
+   `AWS_ACCESS_KEY_ID`
+   `AWS_SECRET_ACCESS_KEY`
+   `STRIPE_PUBLISHABLE_KEY`
+   `STRIPE_SECRET_KEY`
 
 After setup, a superuser needs to be created, via which the menu items have to be created in order for any items to become available for a user to be able to view and have during account login for purchasing and paying for items.
 
@@ -182,8 +184,8 @@ After setup, a superuser needs to be created, via which the menu items have to b
 
 - I received inspiration for this project from the following websites:
 
-      * [Pastamania](https://www.pastamania.com.sg) 
-      * [Lieferando.de](https://www.lieferando.de/en/sofias-hamburg)
+   * [Pastamania](https://www.pastamania.com.sg) 
+   * [Lieferando.de](https://www.lieferando.de/en/sofias-hamburg)
 
 __All materials and content in this project are solely for educational purposes.__
 
