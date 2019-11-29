@@ -10,7 +10,7 @@ This project resembles Sofia's Pizza's online website which serves as their comm
 
 Aside from creating an online presence for the business, the website also allows users to place orders and pay online for them on the condition of having an account. Anyone without an account is eligible to register for one, provided that a unique username and an unregistered email address is used to create the account. Subsequently for users who have an account and are logged in, pages that require user login authorisation will be uniqely available to them.
 
-A wireframe of the website may be found [here,](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Wireframe.pdf) and the schema of the models created to build the website may be found [here.](https://github.com/amcali/project-online-order)
+A wireframe of the website may be found [here,](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Wireframe.pdf) and a diagram of the models created and used to build the website may be found [here.](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Django%20Model%20Diagram.pdf)
 
 The website's [Landing Page] Further information about the website and its features is available on the [About Page.](https://sofias-restaurant.herokuapp.com/home/about)
 
