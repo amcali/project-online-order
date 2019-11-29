@@ -2,17 +2,16 @@
 
 Sofia's Pizza is a fictional delivery business in Singapore, that delivers their homemade pizzas to any doorstep in Singapore. They focus on having an online platform to open a means to customers to be able to place orders with itemvia their website. Due to being a small enterprise, Sofia's Pizza only caters to delivery within in Singapore.
 
-This project is the representation of Sofia's Pizza's online website acting as their commercial platform to enable users to order from them and pay for their orders online. The link to the website is available [here](https://https://sofias-pizza.herokuapp.com)
+This project resembles Sofia's Pizza's online website which serves as their commercial platform to allow users to make and pay for orders online. The link to the website is available [here.](https://https://sofias-pizza.herokuapp.com)
  
 ## UX
 
-Aside from creating an online presence for the business, the website also allows users to place orders and pay online for them on the basis of having an account. Anyone who does not have an account is able to register for one, provided that they create a unique username, and an email address that has not been used before.
+Aside from creating an online presence for the business, the website also allows users to place orders and pay online for them on the condition of having an account. Anyone without an account is eligible to register for one, provided that a unique username and an unregistered email address is used to create the account.
 
 A wireframe of the website may be found [here.](https://github.com/amcali/project-online-order/blob/master/Sofias%20Pizza%20-%20Wireframe.pdf)
 
-This website is for consumers who are wishing for a slice of homemade pizza, and at the convenience of having it delivered to wherever they are in Singapore. To customise to each user's expierience, the website has been set up to require the user to have an account in order to place an order.
-
-Initially upon the landing page, the carousel gives visual insight as to what the website is about. Further information about the website and its features are provided in the about page.
+The website's [Landing Page](https://sofias-restaurant.herokuapp.com/home) comprises of a carousel of images and simple content with the intention of using instant visual insight to what is Sofia's Pizza. Further information about the website and its features is available on the [About Page.](https://sofias-restaurant.herokuapp.com/home/about)
+####
 Users who have an account and are authorised upon login will have access to different pages.
 
 An unregistered user or a user who is not logged into their account will have access to the following pages:
