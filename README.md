@@ -17,11 +17,11 @@ A wireframe of the website may be found [here,](https://github.com/amcali/projec
 The following will outline the UX for an unregistered user or a user who has not logged into their account, and the pages that are available to them.
 
 __Webpages:__
-  * [Home Page](https://sofias-restaurant.herokuapp.com/home) - This is interchangeably referred to as the Landing Page, which comprises of a carousel of images and simple content with the intention of using instant visual insight to what is Sofia's Pizza.
-  * [Register](https://sofias-restaurant.herokuapp.com/account/register) - This is to sign up for a new account.
-  * [Login](https://sofias-restaurant.herokuapp.com/account/login) - This is for registered users to login to their account.
-  * [About](https://sofias-restaurant.herokuapp.com/home/about_us) - This page explains what Sofia's Pizza is about and their contact details; and outlines the procedure on how to order.
-  * [Menu](https://sofias-restaurant.herokuapp.com/menu) - This page lists the menu items which Sofia's Pizza is selling for their delivery service.
+  * [Home Page](https://sofias-pizza.herokuapp.com/home) - This is interchangeably referred to as the Landing Page, which comprises of a carousel of images and simple content with the intention of using instant visual insight to what is Sofia's Pizza.
+  * [Register](https://sofias-pizza.herokuapp.com/account/register) - This is to sign up for a new account.
+  * [Login](https://sofias-pizza.herokuapp.com/account/login) - This is for registered users to login to their account.
+  * [About](https://sofias-pizza.herokuapp.com/home/about_us) - This page explains what Sofia's Pizza is about and their contact details; and outlines the procedure on how to order.
+  * [Menu](https://sofias-pizza.herokuapp.com/menu) - This page lists the menu items which Sofia's Pizza is selling for their delivery service.
 
 __UX Scenarios:__
   1) As a user who wishes to know about the website, one would click the About link in the navigation bar access the About Page, where an overview of Sofia's Pizza business nature may be found.
