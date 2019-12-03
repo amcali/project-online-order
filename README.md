@@ -18,8 +18,8 @@ The following will outline the UX for an unregistered user or a user who has not
 
 __Webpages:__
   * [Home Page](https://sofias-pizza.herokuapp.com/home) - This is interchangeably referred to as the Landing Page, which comprises of a carousel of images and simple content with the intention of using instant visual insight to what is Sofia's Pizza.
-  * [Register](https://sofias-pizza.herokuapp.com/account/register) - This is to sign up for a new account.
-  * [Login](https://sofias-pizza.herokuapp.com/account/login) - This is for registered users to login to their account.
+  * [Register](https://sofias-pizza.herokuapp.com/accounts/register) - This is to sign up for a new account.
+  * [Login](https://sofias-pizza.herokuapp.com/accounts/login) - This is for registered users to login to their account.
   * [About](https://sofias-pizza.herokuapp.com/home/about_us) - This page explains what Sofia's Pizza is about and their contact details; and outlines the procedure on how to order.
   * [Menu](https://sofias-pizza.herokuapp.com/menu) - This page lists the menu items which Sofia's Pizza is selling for their delivery service.
 
